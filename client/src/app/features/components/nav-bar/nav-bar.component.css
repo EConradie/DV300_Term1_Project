@@ -1,5 +1,11 @@
 /* SIDE CONTAINER */
 
+.nav-container{
+  display: flex;
+  height: 100%;
+  
+}
+
 .side-container {
   display: flex;
   flex-direction: column;
@@ -8,6 +14,7 @@
   width: 300px;
   height: 100%;
   gap: 12px;
+  float: left;
   @media (max-width: 1400px) {
     width: 225px;;
     transition: all 0.3s ease;
@@ -78,18 +85,22 @@ margin: 37px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  float: right;
+  align-content: flex-end;
   height: 80px;
   border-bottom: 4px solid var(--nn-blue);
+  flex-grow: 1; /* Add this line */
+
 }
 
 .user-icon{
+  float: right;
   margin-right: 30px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   background-color: aliceblue;
 }
+
 
 
 
