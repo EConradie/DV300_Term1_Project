@@ -1,34 +1,89 @@
-mat-toolbar {
-  background: blue;
-  color: white;
-}
+/* SIDE CONTAINER */
 
-mat-sidenav {
-  margin: 16px;
-  width: 200px;
-  border-right: none;
-  background: red;
-  color: white;
-  text-align: center;
-  border-radius: 10px;
-  padding: 16px;
-}
-
-mat-sidenav-container {
-  height: calc(100vh - 65px);
-  
-}
-
-.content {
-  height: calc(100vh - 98px);
-  margin: 16px;
-  margin-left: 32px;
+.side-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-
-  font-size: 2rem;
-  color: lightgray;
-
-  border-radius: 10px;
+  background-color: var(--nn-blue);
+  width: 300px;
+  height: 100%;
+  gap: 12px;
 }
+
+.logo-container {
+margin: 37px;
+}
+
+.logo {
+  width: 100px;
+  height: 25px;
+}
+
+.nav-items {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  width: 260px;
+  height: 58px;
+  background-color: var(--nn-blue);
+  border-radius: var(--nn--border-radius-medium);
+  transition: background-color 0.5s ease;
+}
+
+.icons {
+  color:white;
+  margin: 25px;
+  margin-right: 5px;
+  width: 32px;
+  height: 32px;
+  transition: background-color 0.5s ease;
+}
+
+.nav-title .text-body {
+  color: white;
+  transition: background-color 0.5s ease;
+}
+
+.nav-items:hover {
+  background-color: var(--nn-cyan);
+}
+
+.nav-items:hover .nav-title {
+  color: black;
+}
+
+.nav-items:hover .icons {
+  filter: invert(100%);
+}
+
+.package {
+  color: var(--nn-cyan);
+}
+
+/* TOP CONTAINER */
+
+
+.user-container {
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  float: right;
+  height: 80px;
+  border-bottom: 4px solid var(--nn-blue);
+}
+
+.user-icon{
+  margin-right: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: aliceblue;
+}
+
+
+
+
+
+

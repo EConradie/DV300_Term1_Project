@@ -53,6 +53,7 @@ h2 {
 
 .text-body {
   font-size: var(--nn-font-body) !important;
+  font-weight: 400;
 }
 
 .text-medium {
@@ -169,3 +170,4 @@ h2 {
 .ml-20 {
   margin-left: 20px !important;
 }
+@import 'mdb-angular-ui-kit/assets/scss/mdb.scss';

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavBarComponent } from './features/components/nav-bar/nav-bar.component';
+import { NavBarComponent } from './features/components/nav-bar/nav-bar.component'; 
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,6 @@ import { NavBarComponent } from './features/components/nav-bar/nav-bar.component
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'employee';
+  title = 'Client';
   
 }
