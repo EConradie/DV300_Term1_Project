@@ -1,4 +1,171 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  /* Colors */
+  --nn-cyan: #33FFA8;
+  --nn-dark-blue: #121B1E;
+  --nn-blue: #182126;
+  --nn-light-blue: #1D272E;
+  --nn-white: #ffffff;
+  --nn-black: #0F1317;
+
+  /* Action Colors */
+  --success: #33FFA8;
+  --warning: #e44d26;
+
+  /* Fonts */
+  --nn-font-body: 16px;
+  --nn-font-medium: 20px;
+  --nn-font-large: 24px;
+  --nn-font-xlarge: 48px;
+
+
+  --nn--border-radius-medium: 16px;
+  --nn--border-radius-small: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  background-color: var(--nn-dark-blue) !important;
+  color: var(--nn-white) !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.no-text-decoration {
+  text-decoration: none !important;
+}
+
+h1 {
+  font-size: var(--nn-font-xlarge);
+  font-weight: 300;
+  color: var(--nn-yellow);
+}
+
+h2 {
+  font-size: var(--nn-font-large);
+  font-weight: 700;
+  color: var(--nn-white);
+}
+
+.text-body {
+  font-size: var(--nn-font-body) !important;
+}
+
+.text-medium {
+  font-size: var(--nn-font-medium) !important;
+}
+
+.text-large {
+  font-size: var(--nn-font-large) !important;
+}
+
+.text-xlarge {
+  font-size: var(--nn-font-xlarge) !important;
+}
+
+.font-weight-300 {
+  font-weight: 300 !important;
+}
+
+.font-weight-400 {
+  font-weight: 400 !important;
+}
+
+.font-weight-700 {
+  font-weight: 700 !important;
+}
+
+.white {
+  color: var(--nn-white) !important;
+}
+
+.cyan {
+  color: var(--nn-cyan) !important;
+}
+
+.accept {
+  color: var(--success) !important;
+}
+
+.decline {
+  color: var(--warning) !important;
+}
+
+.dark-blue {
+  color: var(--nn-dark-blue) !important;
+}
+
+.blue {
+  color: var(--nn-blue) !important;
+}
+
+.light-blue {
+  color: var(--nn-light-blue) !important;
+}
+
+.bold {
+  font-weight: 700 !important;
+}
+
+.p-0 {
+  padding: 0px !important;
+}
+
+.pl-0 {
+  padding-left: 0px !important;
+}
+
+.p-20 {
+  padding: 20px !important;
+}
+
+.pt-20 {
+  padding-top: 20px !important;
+}
+
+.pb-20 {
+  padding-bottom: 20px !important;
+}
+
+.pr-20 {
+  padding-right: 20px !important;
+}
+
+.pl-20 {
+  padding-left: 20px !important;
+}
+
+.pl-0 {
+  padding-left: 0px !important;
+}
+
+.mb-20 {
+  margin-bottom: 20px !important;
+}
+
+.mt-20 {
+  margin-top: 20px !important;
+}
+
+.mr-5 {
+  margin-right: 5px !important;
+}
+
+.ml-0 {
+  margin-left: 0px !important;
+}
+
+.mt-n20 {
+  margin-top: -20px !important;
+}
+.ml-10 {
+  margin-left: 10px !important;
+}
+
+.ml-20 {
+  margin-left: 20px !important;
+}
