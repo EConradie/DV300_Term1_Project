@@ -8,7 +8,7 @@ import {
   isPlatformServer,
   parseCookieValue,
   setRootDomAdapter
-} from "./chunk-MYMPEYNW.js";
+} from "./chunk-2CZIZARF.js";
 import {
   APP_BOOTSTRAP_LISTENER,
   APP_ID,
@@ -43,6 +43,10 @@ import {
   Version,
   ViewEncapsulation$1,
   XSS_SECURITY_URL,
+  __async,
+  __objRest,
+  __spreadProps,
+  __spreadValues,
   _global,
   _sanitizeHtml,
   _sanitizeUrl,
@@ -80,13 +84,7 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-KMLMLHE2.js";
-import {
-  __async,
-  __objRest,
-  __spreadProps,
-  __spreadValues
-} from "./chunk-GLLL6ZVE.js";
+} from "./chunk-B5LUOZ3Q.js";
 
 // node_modules/@angular/common/fesm2022/http.mjs
 var HttpHandler = class {
@@ -4011,7 +4009,6 @@ var makeStateKey2 = makeStateKey;
 var TransferState2 = TransferState;
 
 export {
-  HttpClient,
   BrowserDomAdapter,
   BrowserGetTestability,
   EVENT_MANAGER_PLUGINS,
@@ -4065,4 +4062,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-PODEJTB4.js.map
+//# sourceMappingURL=chunk-CXP3ERM6.js.map

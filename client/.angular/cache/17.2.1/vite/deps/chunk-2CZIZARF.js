@@ -30,6 +30,8 @@ import {
   TemplateRef,
   Version,
   ViewContainerRef,
+  __spreadProps,
+  __spreadValues,
   booleanAttribute,
   createNgModule,
   findLocaleData,
@@ -55,11 +57,7 @@ import {
   ɵɵinject,
   ɵɵinjectAttribute,
   ɵɵstyleProp
-} from "./chunk-KMLMLHE2.js";
-import {
-  __spreadProps,
-  __spreadValues
-} from "./chunk-GLLL6ZVE.js";
+} from "./chunk-B5LUOZ3Q.js";
 
 // node_modules/@angular/common/fesm2022/common.mjs
 var _DOM = null;
@@ -4780,7 +4778,6 @@ export {
   parseCookieValue,
   CommonModule,
   PLATFORM_BROWSER_ID,
-  isPlatformBrowser,
   isPlatformServer,
   ViewportScroller,
   XhrFactory
@@ -4794,4 +4791,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-MYMPEYNW.js.map
+//# sourceMappingURL=chunk-2CZIZARF.js.map
