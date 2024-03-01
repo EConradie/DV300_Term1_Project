@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import { DataSource } from 'typeorm';
-import { Lecturer } from './entity/lecturer';
+import { temp } from './entity/temp';
 
 const app = express();
 
@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/lecturers', async (req,res) => {
-  const users = await AppDataSource.getRepository(Lecturer)
+  const users = await AppDataSource.getRepository(temp)
   .createQueryBuilder('lecturer')
   res.send(await users.getMany())
  })
