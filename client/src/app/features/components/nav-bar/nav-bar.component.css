@@ -8,6 +8,10 @@
   width: 300px;
   height: 100%;
   gap: 12px;
+  @media (max-width: 1300px) {
+    width: 225px;;
+    transition: all 0.3s ease;
+  }
 }
 
 .logo-container {
@@ -24,11 +28,16 @@ margin: 37px;
   align-content: flex-start;
   align-items: center;
   gap: 5px;
+  flex-basis: auto;
   width: 260px;
   height: 58px;
   background-color: var(--nn-blue);
   border-radius: var(--nn--border-radius-medium);
   transition: background-color 0.5s ease;
+  @media (max-width: 1300px) {
+    width: 200px;;
+  transition: all 0.3s ease;
+  }
 }
 
 .icons {
