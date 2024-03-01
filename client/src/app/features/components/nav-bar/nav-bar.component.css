@@ -101,6 +101,14 @@ margin: 37px;
   background-color: aliceblue;
 }
 
+.sub-nav {
+  display: none;
+}
+
+#warehouses:hover .sub-nav {
+  display: block;
+}
+
 
 
 

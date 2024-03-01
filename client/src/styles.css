@@ -2,15 +2,15 @@
 
 :root {
   /* Colors */
-  --nn-cyan: #33FFA8;
-  --nn-dark-blue: #121B1E;
+  --nn-cyan: #33ffa8;
+  --nn-dark-blue: #121b1e;
   --nn-blue: #182126;
-  --nn-light-blue: #1D272E;
+  --nn-light-blue: #1d272e;
   --nn-white: #ffffff;
-  --nn-black: #0F1317;
+  --nn-black: #0f1317;
 
   /* Action Colors */
-  --success: #33FFA8;
+  --success: #33ffa8;
   --warning: #e44d26;
 
   /* Fonts */
@@ -18,7 +18,6 @@
   --nn-font-medium: 20px;
   --nn-font-large: 24px;
   --nn-font-xlarge: 48px;
-
 
   --nn--border-radius-medium: 16px;
   --nn--border-radius-small: 12px;
@@ -33,6 +32,11 @@ body {
 
 .pointer {
   cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .no-text-decoration {
@@ -170,4 +174,3 @@ h2 {
 .ml-20 {
   margin-left: 20px !important;
 }
-
