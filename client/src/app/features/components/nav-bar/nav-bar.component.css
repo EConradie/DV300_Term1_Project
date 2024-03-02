@@ -1,4 +1,13 @@
+.active {
+  color: var(--nn-cyan);
+}
+
 /* SIDE CONTAINER */
+
+.nav-container{
+  display: flex;
+  height: 100%;
+}
 
 .side-container {
   display: flex;
@@ -8,6 +17,7 @@
   width: 300px;
   height: 100%;
   gap: 12px;
+  float: left;
   @media (max-width: 1400px) {
     width: 225px;;
     transition: all 0.3s ease;
@@ -41,7 +51,7 @@ margin: 37px;
 }
 
 .icons {
-  color:white;
+  color: var(--nn-white);
   margin: 25px;
   margin-right: 5px;
   width: 32px;
@@ -50,7 +60,7 @@ margin: 37px;
 }
 
 .nav-title .text-body {
-  color: white;
+  color: var(--nn-white);
   transition: background-color 0.5s ease;
 }
 
@@ -59,7 +69,7 @@ margin: 37px;
 }
 
 .nav-items:hover .nav-title {
-  color: black;
+  color: var(--nn-blue);
 }
 
 .nav-items:hover .icons {
@@ -78,18 +88,64 @@ margin: 37px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  float: right;
+  align-content: flex-end;
   height: 80px;
   border-bottom: 4px solid var(--nn-blue);
+  flex-grow: 1; /* Add this line */
+
 }
 
 .user-icon{
+  float: right;
   margin-right: 30px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: aliceblue;
+  background-color: var(--nn-white);
 }
+
+/* SUB NAV */
+
+.sub-nav {
+  display: none;
+}
+
+#warehouses:hover .sub-nav {
+  display: block;
+}
+
+/* DORPDOWN */
+
+
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+.dropdown-content{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--nn-blue);
+  width: 100px;
+  height: 45px;
+  color: var(--white);
+  border-radius: var(--nn--border-radius-xs);
+  right: 140px;
+  top: 50px;
+  display: none;
+}
+
+.drop-btn{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
 
 
 
