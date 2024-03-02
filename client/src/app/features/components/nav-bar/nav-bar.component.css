@@ -1,9 +1,12 @@
+.active {
+  color: var(--nn-cyan);
+}
+
 /* SIDE CONTAINER */
 
 .nav-container{
   display: flex;
   height: 100%;
-  
 }
 
 .side-container {
@@ -48,7 +51,7 @@ margin: 37px;
 }
 
 .icons {
-  color:white;
+  color: var(--nn-white);
   margin: 25px;
   margin-right: 5px;
   width: 32px;
@@ -57,7 +60,7 @@ margin: 37px;
 }
 
 .nav-title .text-body {
-  color: white;
+  color: var(--nn-white);
   transition: background-color 0.5s ease;
 }
 
@@ -66,7 +69,7 @@ margin: 37px;
 }
 
 .nav-items:hover .nav-title {
-  color: black;
+  color: var(--nn-blue);
 }
 
 .nav-items:hover .icons {
@@ -98,8 +101,10 @@ margin: 37px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: aliceblue;
+  background-color: var(--nn-white);
 }
+
+/* SUB NAV */
 
 .sub-nav {
   display: none;
@@ -108,6 +113,38 @@ margin: 37px;
 #warehouses:hover .sub-nav {
   display: block;
 }
+
+/* DORPDOWN */
+
+
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+.dropdown-content{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--nn-blue);
+  width: 100px;
+  height: 45px;
+  color: var(--white);
+  border-radius: var(--nn--border-radius-xs);
+  right: 140px;
+  top: 50px;
+  display: none;
+}
+
+.drop-btn{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
 
 
 

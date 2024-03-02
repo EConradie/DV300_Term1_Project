@@ -21,6 +21,7 @@
 
   --nn--border-radius-medium: 16px;
   --nn--border-radius-small: 12px;
+  --nn--border-radius-xs: 8px;
 }
 
 body {

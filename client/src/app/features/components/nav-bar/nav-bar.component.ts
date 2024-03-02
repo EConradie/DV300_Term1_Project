@@ -10,4 +10,6 @@ import {RouterOutlet, RouterLink, RouterLinkActive} from '@angular/router';
 })
 export class NavBarComponent {
 
+  
+
 }

@@ -9,7 +9,13 @@
       src="https://img.icons8.com/dotty/80/FFFFFF/dashboard.png"
       alt="dashboard"
     />
-    <a class="nav-title">Create New Package</a>
+    <a
+      class="nav-title"
+      routerLink="/custompackage"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      >Create New Package</a
+    >
   </div>
 
   <div class="nav-items">
@@ -18,7 +24,13 @@
       src="https://img.icons8.com/dotty/80/FFFFFF/dashboard.png"
       alt="dashboard"
     />
-    <a class="nav-title">Dashboard</a>
+    <a
+      class="nav-title"
+      routerLink="/dashboard"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      >Dashboard</a
+    >
   </div>
   <div class="nav-items">
     <img
@@ -42,29 +54,55 @@
       alt="garage-closed"
     />
     <a class="nav-title">Warehouses</a>
-    <div class="sub-nav">
-      <div class="nav-items">
-        <img
-          class="icons"
-          src="https://img.icons8.com/dotty/80/FFFFFF/dashboard.png"
-          alt="dashboard"
-        />
-        <a class="nav-title">Joburg</a>
-      </div>
-      <div class="nav-items">
-        <img
-          class="icons"
-          src="https://img.icons8.com/dotty/80/FFFFFF/dashboard.png"
-          alt="dashboard"
-        />
-        <a class="nav-title">Cape Town</a>
-      </div>
-    </div>
+
   </div>
-  
+
+  <div class="nav-items">
+    <img
+      class="icons"
+      src="https://img.icons8.com/dotty/80/FFFFFF/marker.png"
+      alt="dashboard"
+    />
+    <a
+      class="nav-title"
+      routerLink="/warehouse"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      >Joburg</a
+    >
+  </div>
+
+  <div class="nav-items">
+    <img
+      class="icons"
+      src="https://img.icons8.com/dotty/80/FFFFFF/marker.png"
+      alt="dashboard"
+    />
+    <a
+      class="nav-title"
+      routerLink="/warehouse"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      >Cape Town</a
+    >
+  </div>
+
 </div>
 
 <div class="user-container">
+  <div class="dropdown">
+    <button class="drop-btn">
+      <img
+        class="drop-icon"
+        src="../../../../assets/icons/dropdown-arrow.svg"
+        alt="expand-arrow"
+      />
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Logout</a>
+    </div>
+  </div>
   <p class="user-name">User</p>
   <div class="user-icon"></div>
 </div>
+
