@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './landing-page.component.css'
 })
 export class LandingPageComponent {
-
+  
 }

@@ -87,7 +87,8 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/landingpage-background.jpg"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/purple-green.css",

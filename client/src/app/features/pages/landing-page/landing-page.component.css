@@ -1,0 +1,48 @@
+body {
+    color: var(--nn-white);
+}
+
+.landing-container {
+    color: var(--nn-white);
+}
+
+.landingpage-image {
+    height: auto;
+    background-size: 100%;
+    background-size: cover;
+    border-radius: 16px;
+    
+    
+    /* opacity: 0.5; */
+}
+
+.landingpage-warehouses-cards {
+    background-color: var(--nn-blue);
+}
+
+.image-container {
+    position: relative;
+}
+
+.logo-image-size {
+    top: 10px;
+    left: 10px;
+    z-index: 1; 
+    display: block;
+    margin: 0 auto;
+}
+
+.landingpage-image {
+    width: 100%;
+    height: auto;
+}
+
+.landingpage-warehouses-cards {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.landing-container, .landing-container h5, .landing-container p, .landing-container .card-title, .landing-container .card-text, .landing-container h4, .landing-container hr {
+    color: #fff;
+    text-align: center;
+}
