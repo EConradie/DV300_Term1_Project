@@ -1,0 +1,31 @@
+.dropdown-style {
+    border: 2px solid #3a3e4e;
+    background-color: var(--nn-blue);
+    color: var(--nn-cyan);
+    border-radius: 16px;
+}
+
+.search-style {
+    border: 2px solid #3a3e4e;
+    background-color: var(--nn-blue);
+    color: var(--nn-white);
+    border-radius: 16px;
+}
+
+::placeholder {
+    color: #656e71;
+    opacity: 1;
+  }
+
+.Package-image-size {
+    height: 300px;
+}
+
+.rotated-text {
+    transform: rotate(90deg);
+}
+
+.Package-cards-styling {
+    background-color: var(--nn-blue);
+    color: var(--nn-white);
+}
