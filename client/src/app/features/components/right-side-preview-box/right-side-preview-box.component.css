@@ -1,13 +1,47 @@
 .preview-box {
-    background-color: brown;
-    height: 95%;
+    background-color: var(--nn-blue);
+    height: auto;
     width: 100%;
-    
+    padding: 20px;
+    border-radius: 16px;
 }
 
 .card.Package-cards-styling {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 30%;
+    height: 250px;
+    border: 3px solid #3A3E4E;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
 }
+
+.preview-info {
+    background-color: #212329;
+    border: 3px solid #3A3E4E;
+    padding: 10px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+b {
+    color: var(--nn-cyan);
+}
+h4 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.buy-btn {
+    height: 43px;
+    width: 95%;
+    margin-left: 8px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    background-color: var(--nn-cyan);
+    color: #212329;
+    align-items: center;
+}
+
