@@ -1,0 +1,12 @@
+.Package-image-size {
+    height: 300px;
+}
+
+.rotated-text {
+    transform: rotate(90deg);
+}
+
+.Package-cards-styling {
+    background-color: var(--nn-blue);
+    color: var(--nn-white);
+}

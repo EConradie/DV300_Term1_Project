@@ -29,3 +29,9 @@
     background-color: var(--nn-blue);
     color: var(--nn-white);
 }
+
+.prev-box {
+    width: auto;
+    height: auto;
+    background-color: blue;
+}

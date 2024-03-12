@@ -1,0 +1,13 @@
+.preview-box {
+    background-color: brown;
+    height: 95%;
+    width: 100%;
+    
+}
+
+.card.Package-cards-styling {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30%;
+}
