@@ -9,4 +9,5 @@
 .Package-cards-styling {
     background-color: var(--nn-blue);
     color: var(--nn-white);
+    border-radius: 16px;
 }
