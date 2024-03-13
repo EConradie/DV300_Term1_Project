@@ -1,0 +1,24 @@
+.dropdown-style {
+    border: 2px solid #3a3e4e;
+    background-color: var(--nn-blue);
+    color: var(--nn-cyan);
+    border-radius: 16px;
+}
+
+.dropdown-style2 {
+    border: 2px solid #3a3e4e;
+    background-color: var(--nn-blue);
+    color: var(--nn-white);
+    border-radius: 16px;
+    margin-bottom: 15px;
+}
+
+.input-styling {
+    background-color: var(--nn-blue);
+    border-radius: 16px;
+    padding: 15px;
+}
+
+.row {
+    margin-bottom: 21px;
+}
