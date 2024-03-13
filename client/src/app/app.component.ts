@@ -9,6 +9,7 @@ import { WarehouseComponent } from './features/pages/warehouse/warehouse.compone
 import { LoginPageComponent } from './features/pages/auth/login-page/login-page.component';
 
 
+
 @Component({
   selector: 'app-root',
   standalone: true,

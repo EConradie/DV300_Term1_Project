@@ -1,1 +1,19 @@
-<p>otp-page works!</p>
+<div class="login-container">
+    <img src="../../../../assets/icons/NatureNook.svg" alt="Your Logo" class="logo">
+    <h1>OTP Verification<a class="cyan">.</a></h1>
+    <p>Enter the code from your sms we sent to <a class="cyan">+27 12 345 6789</a></p>
+
+    <div class="otp-container" #otpInputs>
+        <div id="otp-inputs" class="otp-inputs">
+            <input class="otp-input" type="text" inputmode="numeric" maxlength="1" />
+            <input class="otp-input" type="text" inputmode="numeric" maxlength="1" />
+            <input class="otp-input" type="text" inputmode="numeric" maxlength="1" />
+            <input class="otp-input" type="text" inputmode="numeric" maxlength="1" />
+        </div>
+    </div>
+
+    <form class="nn-form" action="/signup" method="post">
+        <button class="nn-btn" type="submit">Verify</button>
+        <button class="nn-btn-light" type="submit">Send OTP Again</button>
+    </form>
+</div>
