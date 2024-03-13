@@ -1,1 +1,103 @@
 <app-stock-quantity />
+
+<div class="container">
+  <div class="row">
+    <!-- Left Container: Packages and Search -->
+    <div class="col-9">
+      <!-- Top row with All Packages, Search bar, and Dropdown list -->
+      <div class="row">
+        <div class="col-md-3">
+          <h5 class="mt-1 title">Name Warehouse</h5>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+          <input
+            type="text"
+            class="form-control search-style"
+            placeholder="Search..."
+          />
+          <span class="icon"><i class="fas fa-search"></i></span>
+        </div>
+        <div class="col-md-3">
+          <select
+            class="form-select dropdown-style"
+            aria-label="Package options"
+          >
+            <option selected>Warehouses</option>
+            <option value="1">Johannesburg</option>
+            <option value="2">Cape Town</option>
+            <option value="3">Durban</option>
+          </select>
+        </div>
+      </div>
+      <app-warehouse-table />
+    </div>
+    <div class="col-md-3">
+      <div class="image-container">
+        <h3 class="image-title">Preview</h3>
+        <div class="image">
+          <img
+            class="img"
+            src="../../assets/icons/NatureNook-Since2024.svg"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div class="edit-items">
+        <div class="label-input">
+          <label for="quantity">Quantity</label>
+          <input
+            class="nn-input"
+            placeholder="Units"
+            type="text"
+            id="quantity"
+            name="quantity"
+            required
+          />
+        </div>
+        <div class="label-input">
+            <label for="price">Price</label>
+            <input
+              class="nn-input"
+              placeholder="Price"
+              type="text"
+              id="price"
+              name="price"
+              required
+            />
+          </div>
+      </div>
+      <div class="label-input">
+        <label for="name">Name</label>
+        <input
+          class="nn-input"
+          placeholder="Name"
+          type="text"
+          id="name"
+          name="name"
+          required
+        />
+      </div>
+      <div class="label-input">
+        <label for="category">Category</label>
+        <input
+          class="nn-input"
+          placeholder="Category"
+          type="text"
+          id="category"
+          name="category"
+          required
+        />
+      </div>
+
+      <div class="button-holder">
+    <button class="edit-btn">Edit</button>
+      <button class="remove-btn">Remove</button>
+      </div>
+
+      
+
+    </div>
+  </div>
+</div>
