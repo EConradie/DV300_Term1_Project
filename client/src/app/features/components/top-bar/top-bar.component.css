@@ -1,0 +1,35 @@
+/* TOP CONTAINER */
+
+.user-container {
+  background-color: var(--nn-dark-blue);
+  height: 80px;
+  border-bottom: 4px solid var(--nn-blue);
+}
+
+.user-icon {
+  float: right;
+  border-radius: 50%;
+  background-color: var(--nn-white);
+  width: 39px;
+  height: 39px;
+  margin-right: 15px;
+  margin-top: 19px;
+}
+
+.user-name {
+    float: right;
+    margin-right: 18px;
+    margin-top: 27px;
+}
+
+/* DORPDOWN */
+
+.drop-btn {
+    float: right;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+  color: var(--nn-cyan);
+  margin-right: 5px;
+}

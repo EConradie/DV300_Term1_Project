@@ -4,28 +4,24 @@
 
 /* SIDE CONTAINER */
 
-.nav-container{
-  display: flex;
-  height: 100%;
+.nav-container {
+  background-color: var(--nn-blue);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
 }
 
 .side-container {
-  display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: var(--nn-blue);
-  width: 300px;
   height: 100%;
-  gap: 12px;
-  float: left;
-  @media (max-width: 1400px) {
-    width: 225px;;
-    transition: all 0.3s ease;
-  }
 }
 
 .logo-container {
-margin: 37px;
+  margin-top: 36px;
+  margin-bottom: 36px;
 }
 
 .logo {
@@ -37,17 +33,11 @@ margin: 37px;
   display: flex;
   align-content: flex-start;
   align-items: center;
-  gap: 5px;
-  flex-basis: auto;
-  width: 260px;
   height: 58px;
   background-color: var(--nn-blue);
   border-radius: var(--nn--border-radius-medium);
   transition: background-color 0.5s ease;
-  @media (max-width: 1400px) {
-    width: 200px;;
-  transition: all 0.3s ease;
-  }
+  margin-bottom: 10px;
 }
 
 .icons {
@@ -79,76 +69,3 @@ margin: 37px;
 .package {
   color: var(--nn-cyan);
 }
-
-/* TOP CONTAINER */
-
-
-.user-container {
-  gap: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  align-content: flex-end;
-  height: 80px;
-  border-bottom: 4px solid var(--nn-blue);
-  flex-grow: 1; /* Add this line */
-
-}
-
-.user-icon{
-  float: right;
-  margin-right: 30px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--nn-white);
-}
-
-/* SUB NAV */
-
-.sub-nav {
-  display: none;
-}
-
-#warehouses:hover .sub-nav {
-  display: block;
-}
-
-/* DORPDOWN */
-
-
-.dropdown:hover .dropdown-content{
-  display: block;
-}
-
-.dropdown-content{
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--nn-blue);
-  width: 100px;
-  height: 45px;
-  color: var(--white);
-  border-radius: var(--nn--border-radius-xs);
-  right: 140px;
-  top: 50px;
-  display: none;
-}
-
-.drop-btn{
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-
-
-
-
-
-
-
-
-
-
