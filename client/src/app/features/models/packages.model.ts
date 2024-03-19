@@ -1,6 +1,5 @@
 export interface Packages {
     id?: number 
-    warehouseId: number
     name: string
     category: string
     price: number
