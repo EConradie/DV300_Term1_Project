@@ -6,6 +6,7 @@ scripts/flow/*/.flowconfig
 .flowconfig
 *~
 *.pyc
+*.tsbuildinfo
 .grunt
 _SpecRunner.html
 __benchmarks__
