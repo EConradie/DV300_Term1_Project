@@ -1,7 +1,8 @@
 import {
   BrowserModule,
   DomRendererFactory2
-} from "./chunk-CXP3ERM6.js";
+} from "./chunk-W7WEVPLD.js";
+import "./chunk-DO7YEYRD.js";
 import {
   AnimationDriver,
   AnimationEngine,
@@ -10,10 +11,10 @@ import {
   NoopAnimationDriver,
   WebAnimationsDriver,
   WebAnimationsStyleNormalizer
-} from "./chunk-ZF4APLY4.js";
+} from "./chunk-5FFGEMQ7.js";
 import {
   DOCUMENT
-} from "./chunk-2CZIZARF.js";
+} from "./chunk-EBYPFRY3.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionScheduler,

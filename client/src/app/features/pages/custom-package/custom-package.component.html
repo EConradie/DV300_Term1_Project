@@ -13,11 +13,14 @@
                     <span class="icon"><i class="fas fa-search"></i></span>
                 </div> -->
                 <div class="col-md-3">
-                    <select class="form-select dropdown-style" aria-label="Package options">
+                    <!-- <select class="form-select dropdown-style" aria-label="Package options">
                         <option selected>Warehouses</option>
                         <option value="1">Johannesburg</option>
                         <option value="2">Cape Town</option>
                         <option value="3">Durban</option>
+                    </select> -->
+                    <select class="form-select dropdown-style" aria-label="Package options">
+                        <option *ngFor="let warehouse of warehouses" [value]="warehouse.id">{{warehouse.location}}</option>
                     </select>
                 </div>
             </div>
