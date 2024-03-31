@@ -35,3 +35,7 @@ label {
   justify-content: space-evenly;
   gap: 80px;
 }
+
+.active {
+  color: var(--nn-cyan);
+}

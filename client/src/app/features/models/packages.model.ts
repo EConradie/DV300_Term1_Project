@@ -1,3 +1,5 @@
+import { Items } from "./items.model";
+
 export interface Packages {
     id?: number 
     name: string
@@ -6,5 +8,7 @@ export interface Packages {
     quantity: number
     date: Date
     image: string
+    items?: Items
     description: string
+    amountCrafted: number
   }

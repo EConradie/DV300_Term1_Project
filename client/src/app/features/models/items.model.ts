@@ -1,3 +1,7 @@
+import { Inventory } from "./inventory.model"
+import { Packages } from "./packages.model"
+
+
 export interface Items {
     id?: number 
     name: string
@@ -7,4 +11,6 @@ export interface Items {
     quantity: number
     model: string
     icon: string
+    package?: Packages
+    inventory?: Inventory
   }

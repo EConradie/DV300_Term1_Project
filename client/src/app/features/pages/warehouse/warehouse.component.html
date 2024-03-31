@@ -1,4 +1,4 @@
-<app-stock-quantity />
+<app-warehouse-stock-quantity [items]="FilteredItems" [selectedLocationId]="selectedInventoryId" />
 
 <div class="container">
   <div class="row">
@@ -22,25 +22,28 @@
           <select
             class="form-select dropdown-style"
             aria-label="Package options"
+            [(ngModel)]="selectedInventoryId"
+            (ngModelChange)="FilterItems()"
           >
-            <option selected>Warehouses</option>
+            <option selected value="All">All</option>
             <option value="1">Johannesburg</option>
             <option value="2">Cape Town</option>
             <option value="3">Durban</option>
           </select>
         </div>
       </div>
-      <app-warehouse-table />
+      <app-warehouse-table
+        *ngFor="let item of FilteredItems"
+        [item]="item"
+        (click)="selectItem(item)"
+      ></app-warehouse-table>
     </div>
-    <div class="col-md-3">
+
+    <div *ngIf="selectedItem" class="col-md-3">
       <div class="image-container">
         <h3 class="image-title">Preview</h3>
         <div class="image">
-          <img
-            class="img"
-            src="../../assets/icons/NatureNook-Since2024.svg"
-            alt=""
-          />
+          <img class="img" [src]="selectedItem.icon" alt="" />
         </div>
       </div>
 
@@ -48,6 +51,7 @@
         <div class="label-input">
           <label for="quantity">Quantity</label>
           <input
+            [(ngModel)]="selectedItem.quantity"
             class="nn-input"
             placeholder="Units"
             type="text"
@@ -57,20 +61,22 @@
           />
         </div>
         <div class="label-input">
-            <label for="price">Price</label>
-            <input
-              class="nn-input"
-              placeholder="Price"
-              type="text"
-              id="price"
-              name="price"
-              required
-            />
-          </div>
+          <label for="price">Price</label>
+          <input
+            [(ngModel)]="selectedItem.price"
+            class="nn-input"
+            placeholder="Price"
+            type="text"
+            id="price"
+            name="price"
+            required
+          />
+        </div>
       </div>
       <div class="label-input">
         <label for="name">Name</label>
         <input
+          [(ngModel)]="selectedItem.name"
           class="nn-input"
           placeholder="Name"
           type="text"
@@ -82,6 +88,7 @@
       <div class="label-input">
         <label for="category">Category</label>
         <input
+          [(ngModel)]="selectedItem.category"
           class="nn-input"
           placeholder="Category"
           type="text"
@@ -92,12 +99,9 @@
       </div>
 
       <div class="button-holder">
-    <button class="edit-btn">Edit</button>
-      <button class="remove-btn">Remove</button>
+        <button (click)="updateItem()" class="edit-btn">Edit</button>
+        <button class="remove-btn">Remove</button>
       </div>
-
-      
-
     </div>
   </div>
 </div>

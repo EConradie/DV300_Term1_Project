@@ -1,6 +1,6 @@
 export interface Inventory {
     id?: number 
     quantity: number
-    item: string
+    items: [];
     warehouse: string
   }
