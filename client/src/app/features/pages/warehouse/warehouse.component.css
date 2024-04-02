@@ -1,34 +1,34 @@
 .dropdown-style {
-    border: 2px solid #3a3e4e;
-    background-color: var(--nn-blue);
-    color: var(--nn-cyan);
-    border-radius: 16px;
+  border: 2px solid #3a3e4e;
+  background-color: var(--nn-blue);
+  color: var(--nn-cyan);
+  border-radius: 16px;
 }
 
 .search-style {
-    border: 2px solid #3a3e4e;
-    background-color: var(--nn-blue);
-    color: var(--nn-white);
-    border-radius: 16px;
+  border: 2px solid #3a3e4e;
+  background-color: var(--nn-blue);
+  color: var(--nn-white);
+  border-radius: 16px;
 }
 
 .container {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .image-container {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    
-    background-color: var(--nn-blue);
-    height: 300px;
-    border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+
+  background-color: var(--nn-blue);
+  height: 300px;
+  border-radius: 16px;
 }
 
 .image-title {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .image {
@@ -39,51 +39,55 @@
 }
 
 .img {
-    width: 100%;
-    height: 220px;
+  width: 100%;
+  height: 220px;
 }
 
 .nn-input {
-    color:var(--nn-white);
-    height: 45px;
-    border: solid 2.5px var(--nn-light-blue);
-    border-radius: 10px;
-    font-size: var(--nn-font-body);
-    background-color: var(--nn-dark-blue);
-    text-align: left;
-
+  color: var(--nn-white);
+  height: 45px;
+  border: solid 2.5px var(--nn-light-blue);
+  border-radius: 10px;
+  font-size: var(--nn-font-body);
+  background-color: var(--nn-dark-blue);
+  text-align: left;
 }
 
 .label-input {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
 .edit-btn {
-    width: 45%;
-    height: 40px;
-    background-color: var(--nn-cyan);
-    color: var(--nn-blue);
-    border-radius: 10px;
-    font-size: var(--nn-font-body);
-    font-weight: 500;
-    border: 1px solid var(--nn-cyan);
+  width: 45%;
+  height: 40px;
+  background-color: var(--nn-cyan);
+  color: var(--nn-blue);
+  border-radius: 10px;
+  font-size: var(--nn-font-body);
+  font-weight: 500;
+  border: 1px solid var(--nn-cyan);
 }
 
 .remove-btn {
-    width: 45%;
-    height: 40px;
-    background-color: var(--warning);
-    color: var(--nn-white);
-    border-radius: 10px;
-    font-size: var(--nn-font-body);
-    font-weight: 500;
-    border: 1px solid var(--warning);
-    float: right;
+  width: 45%;
+  height: 40px;
+  background-color: var(--warning);
+  color: var(--nn-white);
+  border-radius: 10px;
+  font-size: var(--nn-font-body);
+  font-weight: 500;
+  border: 1px solid var(--warning);
+  float: right;
 }
 
 .button-holder {
-    margin-top: 20px;
+  margin-top: 20px;
+}
+
+.selected-style {
+  color: #007bff;
+  
 }

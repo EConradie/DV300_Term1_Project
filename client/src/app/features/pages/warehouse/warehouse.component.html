@@ -1,4 +1,7 @@
-<app-warehouse-stock-quantity [items]="FilteredItems" [selectedLocationId]="selectedInventoryId" />
+<app-warehouse-stock-quantity
+  [items]="FilteredItems"
+  [selectedLocationId]="selectedInventoryId"
+/>
 
 <div class="container">
   <div class="row">
@@ -36,6 +39,8 @@
         *ngFor="let item of FilteredItems"
         [item]="item"
         (click)="selectItem(item)"
+        class="warehouse-table"
+        [ngClass]="{ 'selected-style': selectedItem === item }"
       ></app-warehouse-table>
     </div>
 
