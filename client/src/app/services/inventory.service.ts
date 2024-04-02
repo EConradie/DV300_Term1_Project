@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Inventory } from '../models/inventory.model';
-import { Items } from '../models/items.model';
+import { Inventory } from '../features/models/inventory.model';
+import { Items } from '../features/models/items.model';
 
 
 @Injectable({

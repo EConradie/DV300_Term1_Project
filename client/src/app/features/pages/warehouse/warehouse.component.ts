@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { WarehouseStockQuantityComponent } from '../../components/warehouse-stock-quantity/warehouse-stock-quantity.component';
 import { WarehouseTableComponent } from '../../components/warehouse-table/warehouse-table.component';
-import { InventoryService } from '../../services/inventory.service';
+import { InventoryService } from '../../../services/inventory.service';
 import { Inventory } from '../../models/inventory.model';
 import { Items } from '../../models/items.model';
 import { CommonModule } from '@angular/common';

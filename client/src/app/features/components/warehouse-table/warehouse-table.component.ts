@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Items } from '../../models/items.model';
-import { InventoryService } from '../../services/inventory.service';
+import { InventoryService } from '../../../services/inventory.service';
 
 @Component({
   selector: 'app-warehouse-table',

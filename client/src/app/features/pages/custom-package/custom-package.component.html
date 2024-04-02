@@ -13,13 +13,8 @@
                     <span class="icon"><i class="fas fa-search"></i></span>
                 </div> -->
                 <div class="col-md-3">
-                    <!-- <select class="form-select dropdown-style" aria-label="Package options">
-                        <option selected>Warehouses</option>
-                        <option value="1">Johannesburg</option>
-                        <option value="2">Cape Town</option>
-                        <option value="3">Durban</option>
-                    </select> -->
                     <select class="form-select dropdown-style" aria-label="Package options">
+                        <option selected>Warehouses</option>
                         <option *ngFor="let warehouse of warehouses" [value]="warehouse.id">{{warehouse.location}}</option>
                     </select>
                 </div>
@@ -33,15 +28,13 @@
                         <label class="label-styling">Water Bottle</label>
                     </div>
                     <div class="col-10">
-                        <select class="form-select dropdown-style2" aria-label="Package options">
-                            <option selected>Select...</option>
-                            <option value="1">Hydro Flask 532ML Standerd Mouth Bottle</option>
-                            <option value="2">K-way Explore 750ML water bottle</option>
-                            <option value="3">Ecovessel Bouder 710ML Bottle</option>
+                        <select class="form-select dropdown-style2" aria-label="Water Bottle options" [(ngModel)]="selectedItems.waterBottle" (change)="updatePreview()">
+                            <option value="">Select...</option>
+                            <option *ngFor="let item of FilteredItems" [value]="item.id">{{item.name}}</option>
                         </select>
                     </div>
                     <div class="col-2">
-                        <input type="number" class="form-control dropdown-style2" aria-label="Quantity" placeholder="QTY.">
+                        <input type="number" class="form-control dropdown-style2" aria-label="Quantity" placeholder="QTY." min="0" [(ngModel)]="selectedItems.waterBottleQty" (change)="updatePreview()" value="1">
                     </div>
                 </div> 
 
@@ -51,15 +44,13 @@
                         <label class="label-styling">Tents</label>
                     </div>
                     <div class="col-10">
-                        <select class="form-select dropdown-style2" aria-label="Package options">
-                            <option selected>Select...</option>
-                            <option value="1">Hydro Flask 532ML Standerd Mouth Bottle</option>
-                            <option value="2">K-way Explore 750ML water bottle</option>
-                            <option value="3">Ecovessel Bouder 710ML Bottle</option>
+                        <select class="form-select dropdown-style2" aria-label="Tent options" [(ngModel)]="selectedItems.tent" (change)="updatePreview()">
+                            <option value="">Select...</option>
+                            <option *ngFor="let item of FilteredItems" [value]="item.id">{{item.name}}</option>
                         </select>
                     </div>
                     <div class="col-2">
-                        <input type="number" class="form-control dropdown-style2" aria-label="Quantity" placeholder="QTY.">
+                        <input type="number" class="form-control dropdown-style2" aria-label="Quantity" placeholder="QTY." min="0" [(ngModel)]="selectedItems.tentQty" (change)="updatePreview()" value="1">
                     </div>
                 </div> 
 
@@ -69,15 +60,13 @@
                         <label class="label-styling">Sleeping Bags</label>
                     </div>
                     <div class="col-10">
-                        <select class="form-select dropdown-style2" aria-label="Package options">
-                            <option selected>Select...</option>
-                            <option value="1">Hydro Flask 532ML Standerd Mouth Bottle</option>
-                            <option value="2">K-way Explore 750ML water bottle</option>
-                            <option value="3">Ecovessel Bouder 710ML Bottle</option>
+                        <select class="form-select dropdown-style2" aria-label="Sleeping Bag options" [(ngModel)]="selectedItems.sleepingBag" (change)="updatePreview()">
+                            <option value="">Select...</option>
+                            <option *ngFor="let item of FilteredItems" [value]="item.id">{{item.name}}</option>
                         </select>
                     </div>
                     <div class="col-2">
-                        <input type="number" class="form-control dropdown-style2" aria-label="Quantity" placeholder="QTY.">
+                        <input type="number" class="form-control dropdown-style2" aria-label="Quantity" placeholder="QTY." min="0" [(ngModel)]="selectedItems.sleepingBagQty" (change)="updatePreview()" value="1">
                     </div>
                 </div> 
 
@@ -87,15 +76,13 @@
                         <label class="label-styling">Medkits</label>
                     </div>
                     <div class="col-10">
-                        <select class="form-select dropdown-style2" aria-label="Package options">
-                            <option selected>Select...</option>
-                            <option value="1">Hydro Flask 532ML Standerd Mouth Bottle</option>
-                            <option value="2">K-way Explore 750ML water bottle</option>
-                            <option value="3">Ecovessel Bouder 710ML Bottle</option>
+                        <select class="form-select dropdown-style2" aria-label="Medkit options" [(ngModel)]="selectedItems.medkit" (change)="updatePreview()">
+                            <option value="">Select...</option>
+                            <option *ngFor="let item of FilteredItems" [value]="item.id">{{item.name}}</option>
                         </select>
                     </div>
                     <div class="col-2">
-                        <input type="number" class="form-control dropdown-style2" aria-label="Quantity" placeholder="QTY.">
+                        <input type="number" class="form-control dropdown-style2" aria-label="Quantity" placeholder="QTY." min="0" [(ngModel)]="selectedItems.medkitQty" (change)="updatePreview()" value="1">
                     </div>
                 </div> 
 
@@ -105,15 +92,13 @@
                         <label class="label-styling">Backpacks</label>
                     </div>
                     <div class="col-10">
-                        <select class="form-select dropdown-style2" aria-label="Package options">
-                            <option selected>Select...</option>
-                            <option value="1">Hydro Flask 532ML Standerd Mouth Bottle</option>
-                            <option value="2">K-way Explore 750ML water bottle</option>
-                            <option value="3">Ecovessel Bouder 710ML Bottle</option>
+                        <select class="form-select dropdown-style2" aria-label="Backpack options" [(ngModel)]="selectedItems.backpack" (change)="updatePreview()">
+                            <option value="">Select...</option>
+                            <option *ngFor="let item of FilteredItems" [value]="item.id">{{item.name}}</option>
                         </select>
                     </div>
                     <div class="col-2">
-                        <input type="number" class="form-control dropdown-style2" aria-label="Quantity" placeholder="QTY.">
+                        <input type="number" class="form-control dropdown-style2" aria-label="Quantity" placeholder="QTY." min="0" [(ngModel)]="selectedItems.backpackQty" (change)="updatePreview()" value="1">
                     </div>
                 </div> 
 
@@ -123,15 +108,13 @@
                         <label class="label-styling">Sleeping Mattress</label>
                     </div>
                     <div class="col-10">
-                        <select class="form-select dropdown-style2" aria-label="Package options">
-                            <option selected>Select...</option>
-                            <option value="1">Hydro Flask 532ML Standerd Mouth Bottle</option>
-                            <option value="2">K-way Explore 750ML water bottle</option>
-                            <option value="3">Ecovessel Bouder 710ML Bottle</option>
+                        <select class="form-select dropdown-style2" aria-label="Sleeping Mattress options" [(ngModel)]="selectedItems.sleepingMattress" (change)="updatePreview()">
+                            <option value="">Select...</option>
+                            <option *ngFor="let item of FilteredItems" [value]="item.id">{{item.name}}</option>
                         </select>
                     </div>
                     <div class="col-2">
-                        <input type="number" class="form-control dropdown-style2" aria-label="Quantity" placeholder="QTY.">
+                        <input type="number" class="form-control dropdown-style2" aria-label="Quantity" placeholder="QTY." min="0" [(ngModel)]="selectedItems.sleepingMattressQty" (change)="updatePreview()" value="1">
                     </div>
                 </div> 
 
@@ -139,7 +122,23 @@
         </div>
         <!-- Right Container: Preview Column -->
         <div class="col-lg-4">
-            <app-right-side-preview-box />
+            <div class="container preview-box" *ngIf="selectedItems">
+                <h4>Preview</h4>
+                <div class="col-lg-12">
+                    <div class="card Package-cards-styling" style="background-image: url('https://i.pinimg.com/564x/1e/2b/d3/1e2bd320faaf1f34e5f006d44f4fe917.jpg');"></div>
+                        <div class="card-body preview-info">
+                            <div class="row" *ngFor="let item of selectedItems">
+                                <h5 class="col-sm-1"><b>{{item.qty}}</b></h5>
+                                <h5 class="card-title col-sm-8">{{item.name}}</h5>
+                                <h5 class="col-sm-3"><b>R</b>{{item.price}}</h5>
+                            </div>
+                            <div class="row">
+                                <div class="btn buy-btn col-sm-12"><h5>Craft Package</h5></div>
+                            </div>
+                            
+                        </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
