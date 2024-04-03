@@ -1,56 +1,74 @@
 <div class="row ">
     <!-- Cards Row 1 -->
-    <div class="col-lg-4 my-2">
-        <div class="card Package-cards-styling btn">
-            <img  src="https://i.pinimg.com/564x/1e/2b/d3/1e2bd320faaf1f34e5f006d44f4fe917.jpg" class="card-img-top" alt="Image Description">
+    <div class="col-lg-4 my-2" *ngIf="packages[4]">
+        <div class="card Package-cards-styling btn hover-card">
+            <div class="image-container">
+                <img *ngIf="packages[4]?.image" [src]="packages[4].image" class="card-img-top" alt="{{packages[4]?.name || 'Image Description'}}">
+                <div class="hover-text">{{packages[4].description}} <br><b>R</b> {{packages[4].price}}</div> <!-- Example text to show on hover -->
+            </div>
             <div class="card-body row ">
-                <h6 class="card-title col-12">One Person</h6>
-                <!-- <h6 class="col-4"><b>R</b>5000</h6> -->
+                <h6 class="card-title col-12">{{packages[4].category}}</h6>
+                <!-- <h6 class="col-12"><b>R</b> {{packages[2].price}}</h6> -->
             </div>
         </div>
     </div>
-    <div class="col-lg-4 my-2">
-        <div class="card Package-cards-styling btn">
-            <img src="https://i.pinimg.com/564x/22/2e/36/222e368536aab2285c5eb9a31388cd0f.jpg" class="card-img-top" alt="Image Description">
-            <div class="card-body row">
-                <h6 class="card-title col-12">Two Person</h6>
-                <!-- <h6 class="col-4"><b>R</b>5000</h6> -->
+    <div class="col-lg-4 my-2" *ngIf="packages[0]">
+        <div class="card Package-cards-styling btn hover-card">
+            <div class="image-container">
+                <img *ngIf="packages[0]?.image" [src]="packages[0].image" class="card-img-top" alt="{{packages[0]?.name || 'Image Description'}}">
+                <div class="hover-text">{{packages[0].description}} <br><b>R</b> {{packages[0].price}}</div> <!-- Example text to show on hover -->
+            </div>
+            <div class="card-body row ">
+                <h6 class="card-title col-12">{{packages[0].category}}</h6>
+                <!-- <h6 class="col-12"><b>R</b> {{packages[2].price}}</h6> -->
             </div>
         </div>
     </div>
-    <div class="col-lg-4 my-2">
-        <div class="card Package-cards-styling btn">
-            <img src="https://i.pinimg.com/564x/0a/7f/1d/0a7f1db37c3dfa52ce24f077f61a8de6.jpg" class="card-img-top" alt="Image Description">
-            <div class="card-body row">
-                <h6 class="card-title col-12">Three Person</h6>
-                <!-- <h6 class="col-4"><b>R</b>5000</h6> -->
+    <div class="col-lg-4 my-2" *ngIf="packages[1]">
+        <div class="card Package-cards-styling btn hover-card">
+            <div class="image-container">
+                <img *ngIf="packages[1]?.image" [src]="packages[1].image" class="card-img-top" alt="{{packages[1]?.name || 'Image Description'}}">
+                <div class="hover-text">{{packages[1].description}} <br><b>R</b> {{packages[1].price}}</div> <!-- Example text to show on hover -->
+            </div>
+            <div class="card-body row ">
+                <h6 class="card-title col-12">{{packages[1].category}}</h6>
+                <!-- <h6 class="col-12"><b>R</b> {{packages[2].price}}</h6> -->
             </div>
         </div>
     </div>
-    <div class="col-lg-4 my-2">
-        <div class="card Package-cards-styling btn">
-            <img src="https://i.pinimg.com/564x/3a/14/bc/3a14bc57a6453300e64f0105844789d7.jpg" class="card-img-top" alt="Image Description">
-            <div class="card-body row">
-                <h6 class="card-title col-12">Four Person</h6>
-                <!-- <h6 class="col-4"><b>R</b>5000</h6> -->
+    <div class="col-lg-4 my-2" *ngIf="packages[2]">
+        <div class="card Package-cards-styling btn hover-card">
+            <div class="image-container">
+                <img *ngIf="packages[2]?.image" [src]="packages[2].image" class="card-img-top" alt="{{packages[2]?.name || 'Image Description'}}">
+                <div class="hover-text">{{packages[2].description}} <br><b>R</b> {{packages[2].price}}</div> <!-- Example text to show on hover -->
+            </div>
+            <div class="card-body row ">
+                <h6 class="card-title col-12">{{packages[2].category}}</h6>
+                <!-- <h6 class="col-12"><b>R</b> {{packages[2].price}}</h6> -->
             </div>
         </div>
     </div>
-    <div class="col-lg-4 my-2">
-        <div class="card Package-cards-styling btn">
-            <img src="https://i.pinimg.com/564x/81/97/1f/81971faacb77e0b099f1ee01d642eb64.jpg" class="card-img-top" alt="Image Description">
-            <div class="card-body row">
-                <h6 class="card-title col-12">Six Person</h6>
-                <!-- <h6 class="col-4"><b>R</b>5000</h6> -->
+    <div class="col-lg-4 my-2" *ngIf="packages[3]">
+        <div class="card Package-cards-styling btn hover-card">
+            <div class="image-container">
+                <img *ngIf="packages[3]?.image" [src]="packages[3].image" class="card-img-top" alt="{{packages[3]?.name || 'Image Description'}}">
+                <div class="hover-text">{{packages[3].description}} <br><b>R</b> {{packages[3].price}}</div> <!-- Example text to show on hover -->
+            </div>
+            <div class="card-body row ">
+                <h6 class="card-title col-12">{{packages[3].category}}</h6>
+                <!-- <h6 class="col-12"><b>R</b> {{packages[2].price}}</h6> -->
             </div>
         </div>
     </div>
-    <div class="col-lg-4 my-2">
-        <div class="card Package-cards-styling btn">
-            <img src="https://i.pinimg.com/564x/0a/7f/1d/0a7f1db37c3dfa52ce24f077f61a8de6.jpg" class="card-img-top" alt="Image Description">
-            <div class="card-body row">
-                <h6 class="card-title col-12">Custom Package</h6>
-                <!-- <h6 class="col-4"><b>R</b>5000</h6> -->
+    <div class="col-lg-4 my-2" *ngIf="packages[5]">
+        <div class="card Package-cards-styling btn hover-card">
+            <div class="image-container">
+                <img *ngIf="packages[5]?.image" [src]="packages[5].image" class="card-img-top" alt="{{packages[5]?.name || 'Image Description'}}">
+                <div class="hover-text">{{packages[5].description}} <br><b>R</b> {{packages[5].price}}</div> <!-- Example text to show on hover -->
+            </div>
+            <div class="card-body row ">
+                <h6 class="card-title col-12">{{packages[5].category}}</h6>
+                <!-- <h6 class="col-12"><b>R</b> {{packages[2].price}}</h6> -->
             </div>
         </div>
     </div>

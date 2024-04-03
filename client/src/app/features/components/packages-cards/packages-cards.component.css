@@ -11,3 +11,42 @@
     color: var(--nn-white);
     border-radius: 16px;
 }
+
+/* Style for the image container */
+.image-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Style for the image */
+  .image-container .card-img-top {
+    transition: transform 0.5s ease;
+  }
+  
+  /* Style for the text to show on hover */
+  .image-container .hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none; /* Ignore pointer events so clicks go through to the card */
+  }
+  
+  /* Hover effects */
+  .hover-card:hover .card-img-top {
+    transform: scale(1.1); /* Zoom effect on the image */
+    opacity: 0.35; /* Dim the image */
+  }
+  
+  .hover-card:hover .hover-text {
+    opacity: 1; /* Show the text */
+  }
+
+  .hover-text b {
+    color: var(--nn-cyan);
+  }
+
