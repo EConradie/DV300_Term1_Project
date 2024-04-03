@@ -11,6 +11,5 @@ export interface Packages {
     items?: Items[];
     description: string
     amountCrafted: number
-    isCraftable?: boolean;
+    isCraftable?: boolean; 
   }
-

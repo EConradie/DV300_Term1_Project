@@ -1,68 +1,68 @@
-import { Component } from '@angular/core';
-import { StockQuantityComponent } from '../../components/stock-quantity/stock-quantity.component';
-import { RightSidePreviewBoxComponent } from '../../components/right-side-preview-box/right-side-preview-box.component';
-import { PackagesCardsComponent } from '../../components/packages-cards/packages-cards.component';
+import { Component, OnInit } from '@angular/core';
+import { PackageService } from '../../../services/packages.service';
 import { Packages } from '../../models/packages.model';
-import { ItemService } from '../../../services/item.service';
-import { PackagesService } from '../../../services/packages.service';
-import { Items } from '../../models/items.model';
 import { CommonModule } from '@angular/common';
-import { Observable, throwError } from 'rxjs';
+import { StockQuantityComponent } from '../../components/stock-quantity/stock-quantity.component';
 
 @Component({
   selector: 'app-packages-page',
-  standalone: true,
-  imports: [StockQuantityComponent, RightSidePreviewBoxComponent, PackagesCardsComponent],
   templateUrl: './packages-page.component.html',
-  styleUrl: './packages-page.component.css'
+  styleUrls: ['./packages-page.component.css'],
+  standalone: true,
+  imports: [CommonModule, StockQuantityComponent],
 })
-export class PackagesPageComponent {
+export class PackagesPageComponent implements OnInit {
+  packages: Packages[] = [];
+  selectedPackage?: Packages;
 
-  // packages: any[] = [];
-  // items: any[] = [];
-  // selectedRecipe: any; // Added as per instructions
+  constructor(private packageService: PackageService) {}
 
-  // constructor(private packagesService: PackagesService, private itemsService: ItemsService) { }
+  ngOnInit(): void {
+    this.getPackages();
+  }
 
-  // ngOnInit() {
-  //   this.packagesService.getPackages().subscribe({
-  //     next: (data) => {
-      //       this.packages = data;
-      //     },
-  //     error: (error) => {
-  //       console.error('Error fetching packages:', error);
-    //     }
-  //   });
-  // }
+  getPackages(): void {
+    this.packageService.getAllPackages().subscribe({
+      next: (data) => {
+        this.packages = data.map((pkg) => ({
+          ...pkg,
+          isCraftable: this.isCraftable(pkg), // Dynamically calculate craftability
+        }));
+      },
+      error: (error) => console.error('Error fetching packages:', error),
+    });
+  }
 
-  // //SET ACTIVE RECIPE
-  // selectedItem?: Items;
-  // setSelectedRecipe(recipe: Items) {
-    //   this.selectedItem = recipe;
+  isCraftable(pkg: Packages): boolean {
+    // Assuming each package item's quantity needs to be at least 1 to craft the package
+    return pkg.items?.every((item) => item.quantity > 0) ?? false;
+  }
 
-    //   this.checkCraftability();
-  // }
+  craftPackage(pkg: Packages): void {
+    if (pkg.id === undefined) {
+      console.error('Package id is undefined.');
+      return;
+    }
+  
+    if (!pkg.isCraftable) {
+      console.error('Package is not craftable due to insufficient item quantities.');
+      return;
+    }
+    
+    this.packageService.craftPackage(pkg.id).subscribe({
+      next: (updatedPackage) => {
+        this.selectedPackage = updatedPackage;
+        this.getPackages();
+        console.log('Package crafted successfully', updatedPackage);
+      },
+      error: (error) => console.error('Error crafting package:', error),
+    });
+  }
 
-  // checkCraftability() {
-    //   this.selectedItem!.ingredients?.forEach((items) => {
-      //     if (items.inventory?.amount === undefined || items.inventory.amount < items.amountNeeded) {
-        //       this.selectedItem!.isCraftable = false;
-        //       console.log('Not craftable' + items.inventory?.items);
-      //     }
-  //   });
-  // }
-
-  // craftNewRecipe(selectedPackage: Packages) {
-    //   if (this.selectedItem!.id == selectedPackage.id) {
-      //     //making sure the right recipe is selected
-      //     this.itemsService.craftPackage(selectedPackage).subscribe((data) => {
-        //       this.selectedItem!.amountCrafted++;
-        //       console.log("Recipe Crafted", data);
-      //     });
-    //   }
-  // }
-
-  // trackByFn(_: any, item: any) {
-  //   return item.id; // Replace 'id' with the unique identifier property of your items
-  // }
+  setSelectedPackage(pkg: Packages): void {
+    this.selectedPackage = {
+      ...pkg,
+      isCraftable: this.isCraftable(pkg),
+    };
+  }
 }

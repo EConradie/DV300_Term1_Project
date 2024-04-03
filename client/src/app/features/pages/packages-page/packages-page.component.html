@@ -1,86 +1,45 @@
-    <app-stock-quantity />
-
-
+<app-stock-quantity />
 
 <div class="container mt-3">
     <div class="row mt-5">
-        <!-- Left Container: Packages and Search -->
-        <div class="col-lg-7">
-            <!-- Top row with All Packages, Search bar, and Dropdown list -->
-            <div class="row mb-3">
-                <div class="col-md-3">
-                    <h5 class="mt-1">All Packages</h5>
+      <!-- Packages Display -->
+      <div class="col-lg-7">
+        <div class="row">
+          <ng-container *ngFor="let pkg of packages">
+            <div class="col-lg-4 my-2">
+              <div (click)="setSelectedPackage(pkg)" class="card package-cards-styling btn hover-card">
+                <img *ngIf="pkg.image" [src]="pkg.image" class="card-img-top" [alt]="pkg.name || 'Image Description'">
+                <div class="card-body">
+                  <h6 class="card-title">{{pkg.category}}</h6>
+                  <p>{{pkg.description}}</p>
+                  <p><b>R{{pkg.price}}</b></p>
                 </div>
-                <div class="col-md-3"></div>
-                <div class="col-md-3">
-                    <input type="text" class="form-control search-style" placeholder="Search...">
-                    <span class="icon"><i class="fas fa-search"></i></span>
-                </div>
-                <div class="col-md-3">
-                    <select class="form-select dropdown-style" aria-label="Package options">
-                        <option selected>Warehouses</option>
-                        <option value="1">Johannesburg</option>
-                        <option value="2">Cape Town</option>
-                        <option value="3">Durban</option>
-                    </select>
-                </div>
+              </div>
             </div>
-            <!-- Cards Rows -->
-            <div class="row ">
-                <!-- Cards Row 1 -->
-                <!-- <ng-container *ngFor="let package of packages; trackBy: trackByFn">
-                    <div *ngIf="package" class="col-lg-4 my-2">
-                        <div (click)="setSelectedRecipe(package)" class="card Package-cards-styling btn hover-card">
-                            <div class="image-container">
-                                <img *ngIf="package.image" [src]="package.image" class="card-img-top" alt="{{package.name || 'Image Description'}}">
-                                <div class="hover-text">{{package.description}} <br><b>R</b> {{package.price}}</div> 
-                            
-                            </div>
-                            <div class="card-body row ">
-                                <h6 class="card-title col-12">{{package.category}}</h6>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </ng-container> -->
-                
+          </ng-container>
+        </div>
+      </div>
+      <!-- Selected Package Preview -->
+      <div class="col-lg-4" *ngIf="selectedPackage">
+        <div class="container preview-box">
+          <h4>Preview</h4>
+          <img [src]="selectedPackage.image" class="img-fluid" [alt]="selectedPackage.name">
+          <div class="preview-info">
+            <h5>{{ selectedPackage.category }} - R{{ selectedPackage.price }}</h5>
+            <p>{{ selectedPackage.description }}</p>
+            <!-- Displaying items if any -->
+            <div *ngFor="let item of selectedPackage.items; let i = index">
+              <p>{{ i + 1 }}. {{ item.name }}</p>
             </div>
+            <button *ngIf="selectedPackage.isCraftable" (click)="craftPackage(selectedPackage)" class="btn btn-primary">
+              Craft
+            </button>
+            <p *ngIf="!selectedPackage.isCraftable" class="text-danger">
+              Not Enough Items Available
+            </p>
+          </div>
         </div>
-        <!-- Right Container: Preview Column -->
-        <div class="col-lg-4">
-
-            <!-- <div *ngIf="selectedRecipe" class="container preview-box">
-
-                <h4>Preview</h4>
-                <div class="col-lg-12">
-                    <div class="card preview-Package-cards-styling preview-background-image" [ngStyle]="{'background-image': 'url(' + selectedRecipe.image + ')'}"></div>
-                        <div class="card-body preview-info">
-                            <div class="row">
-                                <h5 class="card-title col-9">{{ selectedRecipe.category }}</h5>
-                                <h5 class="col-3"><b>R</b>{{ selectedRecipe.price }}</h5>
-                            </div>
-            
-                            <hr>
-
-                            <div class="row">
-                                <P>Amount Crafter: <b>{{ selectedRecipe.amountCrafted }}</b></P>
-                                <p>Ingredients Needed:</p>
-                            </div>
-                            
-                            <div *ngFor="let ingredient of selectedRecipe.ingredients; let i = index" class="row">
-                                <h5 class="col-sm-1"><b>{{i + 1}}</b></h5>
-                                <h5 class="card-title col-sm-8">{{ingredient.name}}</h5>
-                                <h5 class="col-sm-3"><b>R</b>{{ingredient.price}}</h5>
-                            </div>
-
-                            <div class="row">
-                                <div *ngIf="selectedRecipe.isCraftable" (click)="craftNewRecipe(selectedRecipe)" class="btn buy-btn col-sm-12"><h5>Craft</h5></div>
-                                <p *ngIf="!selectedRecipe.isCraftable" style="color: red">Not Enough Ingredients Available</p>
-                            </div>
-                            
-                        </div>
-                </div>
-            </div> -->
-        </div>
+      </div>
     </div>
-</div>
+  </div>
+  
