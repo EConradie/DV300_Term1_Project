@@ -1,45 +1,68 @@
 <app-stock-quantity />
 
 <div class="container mt-3">
-    <div class="row mt-5">
-      <!-- Packages Display -->
-      <div class="col-lg-7">
-        <div class="row">
-          <ng-container *ngFor="let pkg of packages">
-            <div class="col-lg-4 my-2">
-              <div (click)="setSelectedPackage(pkg)" class="card package-cards-styling btn hover-card">
-                <img *ngIf="pkg.image" [src]="pkg.image" class="card-img-top" [alt]="pkg.name || 'Image Description'">
-                <div class="card-body">
-                  <h6 class="card-title">{{pkg.category}}</h6>
-                  <p>{{pkg.description}}</p>
-                  <p><b>R{{pkg.price}}</b></p>
-                </div>
+  <div class="row mt-5">
+    <!-- Packages Display -->
+    <div class="col-lg-7">
+      <div class="row">
+        @for (package of packages; track $index) {
+        <ng-container>
+          <div class="col-lg-4 my-2">
+            <div
+              (click)="setSelectedPackage(package)"
+              class="card package-cards-styling btn hover-card"
+            >
+              <img
+                src="../../../../assets/cards-images/{{ package.image }}"
+                class="card-img-top"
+                [alt]="package.name || 'Image Description'"
+              />
+              <div class="card-body">
+                <h6 class="card-title">{{ package.category }}</h6>
+                <p>{{ package.description }}</p>
+                <p>
+                  <b>R{{ package.price }}</b>
+                </p>
               </div>
             </div>
-          </ng-container>
-        </div>
+          </div>
+        </ng-container>
+        }
       </div>
-      <!-- Selected Package Preview -->
-      <div class="col-lg-4" *ngIf="selectedPackage">
-        <div class="container preview-box">
-          <h4>Preview</h4>
-          <img [src]="selectedPackage.image" class="img-fluid" [alt]="selectedPackage.name">
-          <div class="preview-info">
-            <h5>{{ selectedPackage.category }} - R{{ selectedPackage.price }}</h5>
-            <p>{{ selectedPackage.description }}</p>
-            <!-- Displaying items if any -->
-            <div *ngFor="let item of selectedPackage.items; let i = index">
-              <p>{{ i + 1 }}. {{ item.name }}</p>
-            </div>
-            <button *ngIf="selectedPackage.isCraftable" (click)="craftPackage(selectedPackage)" class="btn btn-primary">
-              Craft
-            </button>
-            <p *ngIf="!selectedPackage.isCraftable" class="text-danger">
-              Not Enough Items Available
+    </div>
+    <!-- Selected Package Preview -->
+    @if (selectedPackage) {
+    <div class="col-lg-4">
+      <div class="container preview-box">
+        <h4>Preview</h4>
+        <img
+          src="../../../../assets/cards-images/{{ selectedPackage.image }}"
+          class="img-fluid"
+          [alt]="selectedPackage.name"
+        />
+        <div class="preview-info">
+          <h5>{{ selectedPackage.category }} - R{{ selectedPackage.price }}</h5>
+          <p>{{ selectedPackage.description }}</p>
+          <!-- Displaying items if any -->
+          @for(items of selectedPackage.items; track $index) {
+          <div>
+            <p [style]="{ color: items.quantity < 1 ? 'red' : 'white' }">
+              {{ items.name }}: {{ items.amountNeeded }}
             </p>
           </div>
+          } @if(selectedPackage.isCraftable) {
+          <button
+            (click)="craftPackage(selectedPackage)"
+            class="btn btn-primary"
+          >
+            Craft
+          </button>
+          } @else {
+          <p style="color: red">Not Enough Ingredients Available</p>
+          }
         </div>
       </div>
     </div>
+    }
   </div>
-  
+</div>

@@ -11,58 +11,49 @@ import { StockQuantityComponent } from '../../components/stock-quantity/stock-qu
   standalone: true,
   imports: [CommonModule, StockQuantityComponent],
 })
-export class PackagesPageComponent implements OnInit {
-  packages: Packages[] = [];
-  selectedPackage?: Packages;
-
+export class PackagesPageComponent {
   constructor(private packageService: PackageService) {}
 
   ngOnInit(): void {
     this.getPackages();
   }
 
+  packages: Packages[] = [];
+
   getPackages(): void {
-    this.packageService.getAllPackages().subscribe({
-      next: (data) => {
-        this.packages = data.map((pkg) => ({
-          ...pkg,
-          isCraftable: this.isCraftable(pkg), // Dynamically calculate craftability
-        }));
-      },
-      error: (error) => console.error('Error fetching packages:', error),
+    this.packageService.getAllPackages().subscribe((data) => {
+      this.packages = data;
+      console.log('Packages fetched successfully', data);
     });
   }
 
-  isCraftable(pkg: Packages): boolean {
-    // Assuming each package item's quantity needs to be at least 1 to craft the package
-    return pkg.items?.every((item) => item.quantity > 0) ?? false;
+  //Set active recipe
+  selectedPackage?: Packages;
+  setSelectedPackage(packages: Packages) {
+    this.selectedPackage = packages;
+
+    this.checkCraftability();
   }
 
-  craftPackage(pkg: Packages): void {
-    if (pkg.id === undefined) {
-      console.error('Package id is undefined.');
-      return;
-    }
-  
-    if (!pkg.isCraftable) {
-      console.error('Package is not craftable due to insufficient item quantities.');
-      return;
-    }
-    
-    this.packageService.craftPackage(pkg.id).subscribe({
-      next: (updatedPackage) => {
-        this.selectedPackage = updatedPackage;
-        this.getPackages();
-        console.log('Package crafted successfully', updatedPackage);
-      },
-      error: (error) => console.error('Error crafting package:', error),
+  checkCraftability() {
+    this.selectedPackage!.isCraftable = true;
+
+    this.selectedPackage!.items?.forEach((item) => {
+      if (item.quantity < item.amountNeeded) {
+        this.selectedPackage!.isCraftable = false;
+        console.log('Not craftable' + item.name);
+        return;
+      }
     });
   }
 
-  setSelectedPackage(pkg: Packages): void {
-    this.selectedPackage = {
-      ...pkg,
-      isCraftable: this.isCraftable(pkg),
-    };
+  craftPackage(packages: Packages) {
+    if ((this.selectedPackage!.id = packages.id)) {
+      this.packageService.craftPackage(packages).subscribe((data) => {
+        this.selectedPackage!.amountCrafted++;
+        console.log('Package Crafted', data);
+      });
+    }
+    this.ngOnInit();
   }
 }

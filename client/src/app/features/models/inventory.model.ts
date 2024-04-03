@@ -3,4 +3,5 @@ export interface Inventory {
     quantity: number
     items: [];
     warehouse: string
+    location: string
   }

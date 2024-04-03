@@ -10,6 +10,6 @@ export interface Packages {
     image: string
     items?: Items[];
     description: string
-    amountCrafted: number
-    isCraftable?: boolean; 
+    amountCrafted: number 
+    isCraftable?: boolean;
   }

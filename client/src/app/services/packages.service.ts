@@ -7,15 +7,18 @@ import { Packages } from '../features/models/packages.model';
   providedIn: 'root',
 })
 export class PackageService {
-  private baseUrl = 'http://localhost:3000/packages';
+  
 
   constructor(private http: HttpClient) {}
 
+  private PackageUrl = 'http://localhost:3000/packages';
+
   getAllPackages(): Observable<Packages[]> {
-    return this.http.get<Packages[]>(this.baseUrl);
+    return this.http.get<Packages[]>(this.PackageUrl);
   }
 
-  craftPackage(packageId: number): Observable<Packages> {
-    return this.http.put<Packages>(`${this.baseUrl}/${packageId}/craft`, {});
+  craftPackage(packages: Packages): Observable<Packages> {
+    var CraftUrl = this.PackageUrl + '/' + packages.id + '/craft';
+    return this.http.put<Packages>(CraftUrl, {amount: packages.amountCrafted+1, items: packages.items});
   }
 }

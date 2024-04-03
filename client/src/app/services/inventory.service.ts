@@ -30,4 +30,9 @@ export class InventoryService {
     return this.http.put(`${this.itemsUrl}/${itemId}`, itemData);
   }
 
+  getItems(category?: string): Observable<Items[]> {
+    const url = category ? `${this.itemsUrl}?category=${category}` : this.itemsUrl;
+    return this.http.get<Items[]>(url);
+  }
+
 }
