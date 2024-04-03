@@ -1,4 +1,3 @@
-
     <app-stock-quantity />
 
 
@@ -27,11 +26,61 @@
                 </div>
             </div>
             <!-- Cards Rows -->
-            <app-packages-cards />
+            <div class="row ">
+                <!-- Cards Row 1 -->
+                <!-- <ng-container *ngFor="let package of packages; trackBy: trackByFn">
+                    <div *ngIf="package" class="col-lg-4 my-2">
+                        <div (click)="setSelectedRecipe(package)" class="card Package-cards-styling btn hover-card">
+                            <div class="image-container">
+                                <img *ngIf="package.image" [src]="package.image" class="card-img-top" alt="{{package.name || 'Image Description'}}">
+                                <div class="hover-text">{{package.description}} <br><b>R</b> {{package.price}}</div> 
+                            
+                            </div>
+                            <div class="card-body row ">
+                                <h6 class="card-title col-12">{{package.category}}</h6>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </ng-container> -->
+                
+            </div>
         </div>
         <!-- Right Container: Preview Column -->
         <div class="col-lg-4">
-            <app-right-side-preview-box />
+
+            <!-- <div *ngIf="selectedRecipe" class="container preview-box">
+
+                <h4>Preview</h4>
+                <div class="col-lg-12">
+                    <div class="card preview-Package-cards-styling preview-background-image" [ngStyle]="{'background-image': 'url(' + selectedRecipe.image + ')'}"></div>
+                        <div class="card-body preview-info">
+                            <div class="row">
+                                <h5 class="card-title col-9">{{ selectedRecipe.category }}</h5>
+                                <h5 class="col-3"><b>R</b>{{ selectedRecipe.price }}</h5>
+                            </div>
+            
+                            <hr>
+
+                            <div class="row">
+                                <P>Amount Crafter: <b>{{ selectedRecipe.amountCrafted }}</b></P>
+                                <p>Ingredients Needed:</p>
+                            </div>
+                            
+                            <div *ngFor="let ingredient of selectedRecipe.ingredients; let i = index" class="row">
+                                <h5 class="col-sm-1"><b>{{i + 1}}</b></h5>
+                                <h5 class="card-title col-sm-8">{{ingredient.name}}</h5>
+                                <h5 class="col-sm-3"><b>R</b>{{ingredient.price}}</h5>
+                            </div>
+
+                            <div class="row">
+                                <div *ngIf="selectedRecipe.isCraftable" (click)="craftNewRecipe(selectedRecipe)" class="btn buy-btn col-sm-12"><h5>Craft</h5></div>
+                                <p *ngIf="!selectedRecipe.isCraftable" style="color: red">Not Enough Ingredients Available</p>
+                            </div>
+                            
+                        </div>
+                </div>
+            </div> -->
         </div>
     </div>
 </div>
