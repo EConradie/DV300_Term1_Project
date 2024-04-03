@@ -9,11 +9,11 @@
 .user-icon {
   float: right;
   border-radius: 50%;
-  background-color: var(--nn-white);
   width: 39px;
   height: 39px;
   margin-right: 15px;
   margin-top: 19px;
+  justify-content: center;
 }
 
 .user-name {

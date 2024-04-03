@@ -25,7 +25,9 @@ export class WarehouseComponent {
 
   Items: Items[] = [];
 
-  FilteredItems: Items[] = []; // Add this line to declare and initialize allItems
+  searchQuery: string = '';
+
+  FilteredItems: Items[] = [];
 
   selectedInventoryId: number | null = null;
 
@@ -48,7 +50,8 @@ export class WarehouseComponent {
       this.inventoryService.updateItem(this.selectedItem.id, this.selectedItem).subscribe({
         next: (response) => {
           console.log('Item updated successfully:', response);
-          // Optionally: refresh the item list or handle UI feedback
+          this.ngOnInit();
+          this.selectedItem = null;
         },
         error: (error) => {
           console.error('Error updating item:', error);
@@ -66,5 +69,11 @@ export class WarehouseComponent {
     } else {
       this.FilteredItems = [...this.Items];
     }
+  }
+
+  searchItems() {
+    this.FilteredItems = this.Items.filter(
+      (item) => item.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+    );
   }
 }

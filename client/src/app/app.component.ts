@@ -17,9 +17,15 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [RouterLink, RouterLinkActive, RouterOutlet, NavbarComponent, TopBarComponent ,LandingPageComponent, PackagesPageComponent, CustomPackageComponent, WarehouseComponent, LoginPageComponent, CommonModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'Client';
   constructor(public authService: AuthService) {}
+
+  isLoggedIn(): boolean {
+    // Check if the user is logged in
+    return this.authService.isLoggedIn();
+  }
 }
+    

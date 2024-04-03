@@ -1,17 +1,22 @@
 // src/app/auth.service.ts
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { SessionService } from './session.service';
+import { isPlatformBrowser } from '@angular/common';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private http: HttpClient) {}
 
   private sendOtpUrl = 'http://localhost:3000/send-otp';
   private verifyOtpUrl = 'http://localhost:3000/verify-otp';
   private createUserUrl = 'http://localhost:3000/users/create';
   private loginUrl = 'http://localhost:3000/users/login';
+
+  
 
   sendOtp(phone: string) {
     return this.http.post(this.sendOtpUrl, { phone });
@@ -26,7 +31,10 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return sessionStorage.getItem('isLoggedIn') === 'true';
+    if (isPlatformBrowser(this.platformId)) {
+      return !!sessionStorage.getItem('isLoggedIn');
+    }
+    return false;
   }
 
   createUser( username: string, phone: string, image: string, isLoggedIn: boolean) {
@@ -42,7 +50,4 @@ export class AuthService {
     });
   }
 
-  checkCurrentUserLoggedIn(): boolean {
-    return sessionStorage.getItem('isLoggedIn') === 'true';
-  }
 }

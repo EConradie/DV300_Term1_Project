@@ -1,16 +1,21 @@
-<div  class="container">
+<div class="container">
   <div class="row">
-    <div class="table-container">
-
-      <div class="items">
-        <label>{{ item.name }}</label>
-        <label>{{ item.category }}</label>
-        <label>{{ item.brand }}</label>
-        <label>{{ item.model }}</label>
-        <label>{{ item.price }}</label>
-        <label>{{ item.quantity }}</label>
+    <div class="col-md-4">
+      <div class="card-image">
+        <img class="image" src="../../../../assets/item-images/{{ item.icon}}">
       </div>
-
+      <h2 class="card-title">{{ item.name }}</h2>
+      <div class="card-content">
+        <p class="item-highlight">{{ item.quantity }} in stock</p>
+        <p>•</p>
+        <p>{{ item.category }}</p>
+        <p>•</p>
+        <p>{{ item.brand }}</p>
+        <p>•</p>
+        <p>{{ item.model }}</p>
+        <p>•</p>
+        <p class="item-white">R{{ item.price }}</p>
+      </div>
     </div>
   </div>
 </div>

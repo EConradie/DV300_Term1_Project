@@ -26,9 +26,8 @@ export class InventoryService {
     return this.http.get<Items[]>(this.itemsUrl);
   }
 
-  //Update inventory amount
-  updateItem(id: number, updatedItem: Items): Observable<Items> {
-    return this.http.put<Items>(`${this.itemsUrl}/${id}`, { item: updatedItem });
+  updateItem(itemId: number, itemData: any): Observable<any> {
+    return this.http.put(`${this.itemsUrl}/${itemId}`, itemData);
   }
 
 }

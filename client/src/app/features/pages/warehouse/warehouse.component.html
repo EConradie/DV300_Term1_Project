@@ -18,6 +18,8 @@
             type="text"
             class="form-control search-style"
             placeholder="Search..."
+            [(ngModel)]="searchQuery"
+            (input)="searchItems()"
           />
           <span class="icon"><i class="fas fa-search"></i></span>
         </div>
@@ -48,7 +50,7 @@
       <div class="image-container">
         <h3 class="image-title">Preview</h3>
         <div class="image">
-          <img class="img" [src]="selectedItem.icon" alt="" />
+          <img class="img" src="../../../../assets/item-images/{{selectedItem.icon}}"  alt="" />
         </div>
       </div>
 
@@ -102,10 +104,33 @@
           required
         />
       </div>
+      <div class="label-input">
+        <label for="category">Brand</label>
+        <input
+          [(ngModel)]="selectedItem.brand"
+          class="nn-input"
+          placeholder="Category"
+          type="text"
+          id="category"
+          name="category"
+          required
+        />
+      </div>
+      <div class="label-input">
+        <label for="category">Model</label>
+        <input
+          [(ngModel)]="selectedItem.model"
+          class="nn-input"
+          placeholder="Category"
+          type="text"
+          id="category"
+          name="category"
+          required
+        />
+      </div>
 
       <div class="button-holder">
         <button (click)="updateItem()" class="edit-btn">Edit</button>
-        <button class="remove-btn">Remove</button>
       </div>
     </div>
   </div>

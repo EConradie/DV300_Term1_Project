@@ -1,10 +1,10 @@
 .page-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 99vw;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 99vw;
+}
 
 .login-container {
   display: flex;
@@ -41,8 +41,6 @@
 .active {
   color: var(--nn-cyan);
 }
-
-
 
 .nn-btn {
   width: 300px;
