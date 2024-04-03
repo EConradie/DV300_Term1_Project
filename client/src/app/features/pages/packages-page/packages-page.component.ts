@@ -27,39 +27,39 @@ export class PackagesPageComponent {
   // ngOnInit() {
   //   this.packagesService.getPackages().subscribe({
   //     next: (data) => {
-  //       this.packages = data;
-  //     },
+      //       this.packages = data;
+      //     },
   //     error: (error) => {
   //       console.error('Error fetching packages:', error);
-  //     }
+    //     }
   //   });
   // }
 
   // //SET ACTIVE RECIPE
   // selectedItem?: Items;
   // setSelectedRecipe(recipe: Items) {
-  //   this.selectedItem = recipe;
+    //   this.selectedItem = recipe;
 
-  //   this.checkCraftability();
+    //   this.checkCraftability();
   // }
 
   // checkCraftability() {
-  //   this.selectedItem!.ingredients?.forEach((items) => {
-  //     if (items.inventory?.amount === undefined || items.inventory.amount < items.amountNeeded) {
-  //       this.selectedItem!.isCraftable = false;
-  //       console.log('Not craftable' + items.inventory?.items);
-  //     }
+    //   this.selectedItem!.ingredients?.forEach((items) => {
+      //     if (items.inventory?.amount === undefined || items.inventory.amount < items.amountNeeded) {
+        //       this.selectedItem!.isCraftable = false;
+        //       console.log('Not craftable' + items.inventory?.items);
+      //     }
   //   });
   // }
 
   // craftNewRecipe(selectedPackage: Packages) {
-  //   if (this.selectedItem!.id == selectedPackage.id) {
-  //     //making sure the right recipe is selected
-  //     this.itemsService.craftPackage(selectedPackage).subscribe((data) => {
-  //       this.selectedItem!.amountCrafted++;
-  //       console.log("Recipe Crafted", data);
-  //     });
-  //   }
+    //   if (this.selectedItem!.id == selectedPackage.id) {
+      //     //making sure the right recipe is selected
+      //     this.itemsService.craftPackage(selectedPackage).subscribe((data) => {
+        //       this.selectedItem!.amountCrafted++;
+        //       console.log("Recipe Crafted", data);
+      //     });
+    //   }
   // }
 
   // trackByFn(_: any, item: any) {

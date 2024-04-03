@@ -13,4 +13,5 @@ export interface Items {
     icon: string
     package?: Packages
     inventory?: Inventory
+    amountNeeded?: number;
   }

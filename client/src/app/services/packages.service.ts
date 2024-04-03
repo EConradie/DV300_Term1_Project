@@ -13,4 +13,11 @@ export class PackagesService {
   getPackages(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
+
+  // Add this method
+  craftRecipe(recipe: any): Observable<any> {
+    // Replace 'your_api_endpoint' with the actual endpoint where the recipe crafting is handled
+    return this.http.post('your_api_endpoint', recipe);
+  }
 }
+
