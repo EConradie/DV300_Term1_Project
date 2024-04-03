@@ -70,14 +70,19 @@ export class OtpPageComponent implements AfterViewInit {
 
   onSubmit() {
     this.authService.verifyOtp(this.phone, this.code).subscribe({
-      next: (response) => {
-        console.log('OTP verification success:', response);
-        this.router.navigate(['/signup'], { state: { phone: this.phone } });
+      next: (response: any) => {
+        if (response.message.includes("logged in")) {
+          // User already signed up and logged in
+          this.router.navigate(['/']); // Adjust as needed
+        } else if (response.message.includes("signup")) {
+          // New user, proceed to signup
+          this.router.navigate(['/signup'], { state: { phone: this.phone } });
+        }
       },
       error: (error) => {
-        console.error('Error during OTP verification:', error);
-        alert(error.error.message || 'Verification failed. Please try again.');
-      },
+        console.error('Verification error:', error);
+        alert('Verification failed. Please try again.');
+      }
     });
   }
 }

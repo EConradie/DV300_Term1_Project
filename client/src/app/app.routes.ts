@@ -6,15 +6,15 @@ import { WarehouseComponent } from './features/pages/warehouse/warehouse.compone
 import { LoginPageComponent } from './features/pages/auth/login-page/login-page.component';
 import { OtpPageComponent } from './features/pages/auth/otp-page/otp-page.component'; 
 import { SignUpPageComponent } from './features/pages/auth/sign-up-page/sign-up-page.component';
+import { AuthGuard } from './features/guards/auth.guard'; 
 
 export const routes: Routes = [
-    { path: 'dashboard', component: LandingPageComponent },
-    { path: 'packages', component: PackagesPageComponent },
-    { path: 'custompackage', component: CustomPackageComponent },
-    { path: 'warehouse', component: WarehouseComponent },
+    { path: 'dashboard', component: LandingPageComponent, canActivate: [AuthGuard] }, // Protected
+    { path: 'packages', component: PackagesPageComponent, canActivate: [AuthGuard] }, // Protected
+    { path: 'custompackage', component: CustomPackageComponent, canActivate: [AuthGuard] }, // Protected
+    { path: 'warehouse', component: WarehouseComponent, canActivate: [AuthGuard] }, // Protected
     { path: 'login', component: LoginPageComponent },
     { path: 'otp', component: OtpPageComponent },
     { path: 'signup', component: SignUpPageComponent },
-    { path:'', redirectTo: 'dashboard', pathMatch: 'full' }, //Take us to our first path when opening the url
-    // { path: '**', component: PageNotFoundComponent }
+    { path:'', redirectTo: 'dashboard', pathMatch: 'full' }, 
 ];

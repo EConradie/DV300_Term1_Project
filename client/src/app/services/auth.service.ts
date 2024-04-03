@@ -22,7 +22,11 @@ export class AuthService {
   }
 
   login(phone: string) {
-    return this.http.post<{message: string, user?: {username: string, isLoggedIn: boolean}}>(this.loginUrl, { phone });
+    return this.http.post<{user: {username: string}}>(this.loginUrl, { phone });
+  }
+
+  isLoggedIn(): boolean {
+    return sessionStorage.getItem('isLoggedIn') === 'true';
   }
 
   createUser( username: string, phone: string, image: string, isLoggedIn: boolean) {
@@ -36,5 +40,9 @@ export class AuthService {
     return this.http.post<any>(this.createUserUrl, body,{
       headers: { 'Content-Type': 'application/json' }
     });
+  }
+
+  checkCurrentUserLoggedIn(): boolean {
+    return sessionStorage.getItem('isLoggedIn') === 'true';
   }
 }
