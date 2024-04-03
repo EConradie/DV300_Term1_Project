@@ -1,6 +1,7 @@
 <app-stock-quantity />
 
 <div class="container mt-3">
+<<<<<<< Updated upstream
   <div class="row mt-5">
     <!-- Packages Display -->
     <div class="col-lg-7">
@@ -48,6 +49,71 @@
           <div>
             <p [style]="{ color: items.quantity < 1 ? 'red' : 'white' }">
               {{ items.name }}: {{ items.amountNeeded }}
+=======
+    <div class="row mt-5">
+      <!-- Packages Display -->
+      <div class="col-lg-7">
+        <div class="row">
+
+          <ng-container *ngFor="let pkg of packages">
+
+            <div class="col-lg-4 my-2">
+              <div (click)="setSelectedPackage(pkg)" class="card package-cards-styling btn hover-card">
+                <div class="image-container">
+                    <img *ngIf="pkg.image" [src]="pkg.image" class="card-img-top" [alt]="pkg.name || 'Image Description'">
+                    <div class="hover-text">{{pkg.description}} <br><b>R</b> {{pkg.price}}</div> <!-- Example text to show on hover -->
+                </div>
+                <div class="card-body">
+                  <h6 class="card-title">{{pkg.category}}</h6>
+                </div>
+              </div>
+            </div>
+
+          </ng-container>
+
+        </div>
+      </div>
+      
+      <!-- Selected Package Preview -->
+      <div class="col-lg-4" *ngIf="selectedPackage">
+        <div class="container preview-box">
+          <h4>Preview</h4>
+          
+          <div class="card Package-card-styling" style="background-image: url('{{selectedPackage.image}}'); background-size: cover; background-position: center; height: 200px;"></div>
+          <div class="preview-info">
+            <div class="row">
+                <div class="col-9">
+                    <h5>{{ selectedPackage.category }}</h5>
+                </div>
+                <div class="col-3">
+                    <h5><b>R</b>{{ getTotalPrice(selectedPackage.items ?? []) }}</h5>
+                </div>
+            </div>
+            <hr>
+            
+            <!-- Displaying items if any -->
+            <div *ngFor="let item of selectedPackage.items; let i = index">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <h5><b>{{ i + 1 }}.</b></h5>
+                    </div>
+                    <div class="col-sm-8">
+                        <h5>{{ item.name }}</h5>
+                    </div>
+                    <div class="col-sm-3">
+                        <h5><b>R</b>{{ item.price }}</h5>
+                    </div>
+                </div>
+              
+            </div>
+
+
+            <button *ngIf="selectedPackage.isCraftable" (click)="craftPackage(selectedPackage)" class="btn buy-btn">
+              Craft
+            </button>
+            <p *ngIf="!selectedPackage.isCraftable" class="text-danger">
+              Not Enough Items Available
+>>>>>>> Stashed changes
             </p>
           </div>
           } @if(selectedPackage.isCraftable) {

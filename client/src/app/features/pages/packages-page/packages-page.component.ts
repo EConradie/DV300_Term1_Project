@@ -56,4 +56,9 @@ export class PackagesPageComponent {
     }
     this.ngOnInit();
   }
+
+  getTotalPrice(items: any[]): number {
+    return items.reduce((acc, item) => acc + item.price, 0);
+  }
 }
+
