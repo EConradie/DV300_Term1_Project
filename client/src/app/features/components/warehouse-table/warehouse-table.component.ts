@@ -25,6 +25,7 @@ export class WarehouseTableComponent {
     quantity: 0,
     model: 'Test',
     icon: 'Test',
+    amountNeeded: 0
   };
 
 }

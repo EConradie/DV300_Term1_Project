@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PackagesService } from '../../../services/packages.service';
-
+import { PackageService } from '../../../services/packages.service';
+import { Packages } from '../../models/packages.model';
 
 @Component({
   selector: 'app-packages-cards',
@@ -11,12 +11,12 @@ import { PackagesService } from '../../../services/packages.service';
   styleUrl: './packages-cards.component.css'
 })
 export class PackagesCardsComponent implements OnInit {
-  packages: any[] = [];
+  packages: Packages[] = [];
 
-  constructor(private packagesService: PackagesService) { }
+  constructor(private packageService: PackageService) { }
 
   ngOnInit() {
-    this.packagesService.getPackages().subscribe({
+    this.packageService.getAllPackages().subscribe({
       next: (data) => {
         this.packages = data;
       },

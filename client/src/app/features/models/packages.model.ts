@@ -8,7 +8,8 @@ export interface Packages {
     quantity: number
     date: Date
     image: string
-    items?: Items
+    items?: Items[];
     description: string
     amountCrafted: number
+    isCraftable?: boolean; 
   }
