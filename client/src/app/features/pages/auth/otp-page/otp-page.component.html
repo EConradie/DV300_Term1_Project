@@ -12,8 +12,8 @@
         </div>
     </div>
 
-    <form class="nn-form" action="/signup" method="post">
+    <form (ngSubmit)="onSubmit()" class="nn-form">
         <button class="nn-btn" type="submit">Verify</button>
-        <button class="nn-btn-light" type="submit">Send OTP Again</button>
+        <!-- <button class="nn-btn-light" type="submit">Send OTP Again</button> -->
     </form>
 </div>

@@ -1,7 +1,6 @@
+// src/app/auth.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -9,51 +8,33 @@ import { tap } from 'rxjs/operators';
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  //Influences our behaviour
-  private isLoggedIn = new BehaviorSubject<boolean>(false);
-
-  //https url
+  private sendOtpUrl = 'http://localhost:3000/send-otp';
+  private verifyOtpUrl = 'http://localhost:3000/verify-otp';
+  private createUserUrl = 'http://localhost:3000/users/create';
   private loginUrl = 'http://localhost:3000/users/login';
 
-  //Login
-  loginUser(email: string, password: string): Observable<boolean> {
-    //Make http request, receive the response of user info, save user info to session
-    return this.http.post<any>(this.loginUrl, { email, password }).pipe(
-      tap((response) => {
-        if (response) {
-          console.log(response);
-          sessionStorage.setItem('currentUser', JSON.stringify(response));
-          this.isLoggedIn.next(true);
-        }
-      })
-    );
+  sendOtp(phone: string) {
+    return this.http.post(this.sendOtpUrl, { phone });
   }
 
-  //Logout
-  logout() {
-    sessionStorage.removeItem('currentUser');
-    this.isLoggedIn.next(false); //Set state false
+  verifyOtp(phone: string, code: string) {
+    return this.http.post(this.verifyOtpUrl, { phone, code });
   }
 
-  //returns the logged in user info
-  checkCurrentUserLoggedIn(): boolean {
-    var user = JSON.parse(sessionStorage.getItem('currentUser')!);
-
-    if (user) {
-      this.isLoggedIn.next(true);
-      return true;
-    } else {
-      this.isLoggedIn.next(false);
-      return false;
-    }
+  login(phone: string) {
+    return this.http.post<{message: string, user?: {username: string, isLoggedIn: boolean}}>(this.loginUrl, { phone });
   }
 
-  //Check if user is logged - for UI
-  checkIfLoggedIn(): Observable<boolean> {
-    return this.isLoggedIn.asObservable();
-  }
+  createUser( username: string, phone: string, image: string, isLoggedIn: boolean) {
+    const body = {
+      username,
+      phone,
+      image,
+      isLoggedIn
+    };
 
-  getCurrentUser() {
-    return JSON.parse(sessionStorage.getItem('currentUser')!);
+    return this.http.post<any>(this.createUserUrl, body,{
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 }

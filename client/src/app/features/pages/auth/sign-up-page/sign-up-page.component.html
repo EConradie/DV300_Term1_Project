@@ -2,8 +2,8 @@
     <img src="../../../../assets/icons/NatureNook.svg" alt="Your Logo" class="logo">
     <h1>Welcome<a class="cyan">.</a></h1>
     <p>What would you like to be know as?</p>
-    <form class="nn-form" action="/login" method="post">
-        <input class="nn-input" placeholder="Username" type="text" id="username" name="username" required>
+    <form (ngSubmit)="onSubmit()" class="nn-form" method="post">
+        <input [(ngModel)]="username" class="nn-input" placeholder="Username" type="text" id="username" name="username" required>
         <button class="nn-btn" type="submit">Continue to NatureNook</button>
     </form>
 </div>

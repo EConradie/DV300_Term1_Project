@@ -2,8 +2,8 @@
     <img src="../../../../assets/icons/NatureNook.svg" alt="Your Logo" class="logo">
     <h1>Login<a class="cyan">.</a></h1>
     <p>Welcome to Nature<a class="cyan">Nook</a>, provide your number to proceed.</p>
-    <form class="nn-form" action="/otp" method="post">
-        <input class="nn-input" placeholder="Number" type="text" id="number" name="number" required>
+    <form (ngSubmit)="onSubmit()" class="nn-form" method="post">
+        <input [(ngModel)]="phone" class="nn-input" placeholder="Enter your Number" type="text" id="number" name="phone" required pattern="\+27\d{9}">
         <button class="nn-btn" type="submit">Login</button>
     </form>
 </div>
