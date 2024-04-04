@@ -30,11 +30,11 @@ export class StockQuantityComponent {
     if (this.selectedPackageId !== null) {
       const selectedPackage = this.packages.find(pkg => pkg.id === this.selectedPackageId);
       if (selectedPackage) {
-        this.totalPackages = 1;
+        this.totalPackages = this.packages.length;
         this.totalCrafted = selectedPackage.amountCrafted ;
         this.totalRevenue = selectedPackage.items?.reduce((acc, item) => acc + (item.price * this.totalCrafted), 0) || 0; 
       } else {
-        this.totalPackages = 0;
+        this.totalPackages = this.packages.length;
         this.totalCrafted = 0;
         this.totalRevenue = 0;
       }
