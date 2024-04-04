@@ -14,13 +14,6 @@
 
 NatureNook is a comprehensive platform that offers a wide selection of packages and carefully chosen items to meet the diverse needs and goals of our customers. Our aim is to ensure that every trip is not only remarkable but also precisely fits the individual goals and objectives of those who undertake it. Whether it's going on a challenging wilderness trek, exploring the mysteries of the rainforest, or just relaxing in the seclusion of a remote nature retreat, NatureNook is dedicated to offering unmatched opportunities for exploration, discovery, and personal growth amidst the breathtaking wonders of the natural world.
 
-## Features
-
-- **Exploratory Packages:** A variety of packages that cater to different interests and levels of adventure.
-- **Environmental Conservation:** Initiatives and programs aimed at promoting sustainability and protecting the environment.
-- **Customizable Experiences:** Options to tailor trips and experiences to meet individual preferences and goals.
-- **Educational Content:** Resources and information to enhance understanding and appreciation of nature.
-
 ## Getting Started
 
 To get started with NatureNook, follow these steps:
@@ -51,24 +44,30 @@ To get started with NatureNook, follow these steps:
    ```
    ng serve --open
    ```
+**Server setup**
 
-To deploy the server itself, you typically need to follow these steps:
+In order to set up the database. The server's the Github repository can be found on the link below. The server's readMe file will contain instructions on how to set it up. 
+```
+https://github.com/EConradie/DV300_Term1_Project_Server.git
+```
 
-1. Set up your server environment with the necessary dependencies for your application.
-2. Clone or copy your project files to the server.
-3. Install any required packages or libraries using package managers like npm or pip.
-4. Configure your server settings such as environment variables, database connections, etc.
-5. Start your server application using the appropriate command (e.g., npm start for Node.js applications).
-6. Monitor the server logs to ensure everything is running smoothly.
-7. Test your server to verify that it is accessible and functioning correctly.
+## Development Process
 
+### Highlights
+* The user interface's simplicity and the features that make using the website enjoyable are its highlights.
+* The website is simple to use and comprehend.
+* Integrate a Twilio function into your website to enable seamless communication via SMS, voice calls, or other channels.
 
-To deploy the server to pgAdmin4, follow these steps:
+### Challenges
+* 
+* 
 
-1. Open pgAdmin4 and connect to your PostgreSQL server.
-2. Right-click on "Servers" and select "Create" > "Server".
-3. Fill in the server name ```naturenook_db``` and under the "Connection" tab, enter the host, port, maintenance database, username, and password.
-4. Click "Save" to add the server to pgAdmin4.
-5. You can now access and manage your server through pgAdmin4.
+## Future Implementations
+
+In the future, clients with specific requests will be able to create their own packages on the website by utilising the management website's functionality. 
+
+## License
+
+[MIT](LICENSE) © Emilio Carreira, Erik Conradie
    
 
