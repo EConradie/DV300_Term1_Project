@@ -29,12 +29,17 @@ export class WarehouseComponent {
 
   FilteredItems: Items[] = [];
 
-  selectedInventoryId: number | null = null;
+  selectedInventoryId: number | null = 1;
 
   ngOnInit() {
+    this.getItems();
+    this.FilterItems();
+  }
+
+  getItems() {
     this.inventoryService.getAllItems().subscribe((data) => {
-      console.log(data);
       this.Items = data;
+      this.FilteredItems = [...this.Items];
       this.FilterItems();
     });
   }

@@ -9,10 +9,10 @@ import { SignUpPageComponent } from './features/pages/auth/sign-up-page/sign-up-
 import { AuthGuard } from './features/guards/auth.guard'; 
 
 export const routes: Routes = [
-    { path: 'dashboard', component: LandingPageComponent, canActivate: [AuthGuard] }, // Protected
-    { path: 'packages', component: PackagesPageComponent, canActivate: [AuthGuard] }, // Protected
-    { path: 'custompackage', component: CustomPackageComponent, canActivate: [AuthGuard] }, // Protected
-    { path: 'warehouse', component: WarehouseComponent, canActivate: [AuthGuard] }, // Protected
+    { path: 'dashboard', component: LandingPageComponent, canActivate: [AuthGuard] }, 
+    { path: 'packages', component: PackagesPageComponent, canActivate: [AuthGuard] }, 
+    { path: 'custompackage', component: CustomPackageComponent, canActivate: [AuthGuard] }, 
+    { path: 'warehouse', component: WarehouseComponent, canActivate: [AuthGuard] }, 
     { path: 'login', component: LoginPageComponent },
     { path: 'otp', component: OtpPageComponent },
     { path: 'signup', component: SignUpPageComponent },

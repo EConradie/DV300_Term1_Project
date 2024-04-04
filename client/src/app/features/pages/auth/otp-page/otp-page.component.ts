@@ -73,7 +73,7 @@ export class OtpPageComponent implements AfterViewInit {
       next: (response: any) => {
         if (response.message.includes("logged in")) {
           // User already signed up and logged in
-          this.router.navigate(['/']); // Adjust as needed
+          this.router.navigate(['/']);
         } else if (response.message.includes("signup")) {
           // New user, proceed to signup
           this.router.navigate(['/signup'], { state: { phone: this.phone } });

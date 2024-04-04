@@ -1,4 +1,5 @@
 import { Items } from "./items.model";
+import { Inventory } from "./inventory.model";
 
 export interface Packages {
     id?: number 
@@ -9,5 +10,5 @@ export interface Packages {
     description: string
     amountCrafted: number 
     isCraftable?: boolean;
-    inventoryId?: number;
+    inventory?: Inventory;
   }

@@ -14,21 +14,23 @@ import { FormsModule } from '@angular/forms';
 })
 export class PackagesPageComponent implements OnInit {
   packages: Packages[] = [];
-  filteredPackages: Packages[] = []; // Added to hold the filtered list of packages
-  selectedInventoryId: number | null = null;
-  selectedPackage?: Packages;
+  filteredPackages: Packages[] = [];
+  selectedInventoryId: number | null = 1;
+  selectedPackage?: Packages | null;
   selectedPackageId: number | null = null;
 
   constructor(private packageService: PackageService) {}
 
   ngOnInit(): void {
     this.getPackages();
+    this.FilterPackages();
   }
 
   getPackages(): void {
     this.packageService.getAllPackages().subscribe((data) => {
       this.packages = data;
-      this.filteredPackages = [...this.packages]; // Initialize filteredPackages
+      this.filteredPackages = [...this.packages]; 
+      this.FilterPackages();
       console.log('Packages fetched successfully', data);
     });
   }
@@ -40,7 +42,7 @@ export class PackagesPageComponent implements OnInit {
   }
 
   checkCraftability() {
-    if (!this.selectedPackage) return; // Guard clause for null or undefined selectedPackage
+    if (!this.selectedPackage) return; 
 
     this.selectedPackage.isCraftable = true;
     this.selectedPackage.items?.forEach((item) => {
@@ -58,6 +60,8 @@ export class PackagesPageComponent implements OnInit {
         if (this.selectedPackage) {
           this.selectedPackage.amountCrafted++;
           console.log('Package Crafted', data);
+          this.ngOnInit();
+          this.selectedPackage = null;
         }
       });
     }
@@ -71,10 +75,21 @@ export class PackagesPageComponent implements OnInit {
     const selectedId = this.selectedInventoryId;
     if (selectedId) {
       this.filteredPackages = this.packages.filter(
-        (packageItem) => packageItem.items?.some(item => item.inventory?.id === selectedId)
+        (packageItem) => packageItem.inventory?.id == selectedId
       );
     } else {
       this.filteredPackages = [...this.packages];
     }
+
+    this.filteredPackages.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  getSelectedLocationName(): string {
+    const mapping: { [key: number]: string } = {
+      '1': 'Johannesburg',
+      '2': 'Cape Town',
+      '3': 'Durban'
+    };
+    return this.selectedInventoryId !== null ? mapping[this.selectedInventoryId] : 'All';
   }
 }

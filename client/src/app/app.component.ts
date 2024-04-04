@@ -24,7 +24,6 @@ export class AppComponent {
   constructor(public authService: AuthService) {}
 
   isLoggedIn(): boolean {
-    // Check if the user is logged in
     return this.authService.isLoggedIn();
   }
 }

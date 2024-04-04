@@ -33,7 +33,5 @@ export class WarehouseStockQuantityComponent implements OnInit {
       .filter(item => this.selectedLocationId && item.inventory?.id == this.selectedLocationId)
       .reduce((acc, item) => acc + item.quantity, 0);
     this.totalPriceOfItems = this.items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-
-    // Calculation total crafted
   }
 }
