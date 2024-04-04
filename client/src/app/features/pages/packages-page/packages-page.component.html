@@ -12,7 +12,7 @@
               <div (click)="setSelectedPackage(pkg)" class="card package-cards-styling btn hover-card">
                 <div class="image-container">
                     <img *ngIf="pkg.image" [src]="pkg.image" class="card-img-top" [alt]="pkg.name || 'Image Description'">
-                    <div class="hover-text">{{pkg.description}} <br><b>R</b> {{pkg.price}}</div> <!-- Example text to show on hover -->
+                    <div class="hover-text">{{pkg.description}} <br><b>R</b> {{ getTotalPrice(pkg.items ?? []) }}</div> <!-- Example text to show on hover -->
                 </div>
                 <div class="card-body">
                   <h6 class="card-title">{{pkg.category}}</h6>
@@ -46,7 +46,7 @@
             <div *ngFor="let item of selectedPackage.items; let i = index">
                 <div class="row">
                     <div class="col-sm-1">
-                        <h5><b>{{ i + 1 }}.</b></h5>
+                        <h5><b>{{item.amountNeeded}}</b></h5>
                     </div>
                     <div class="col-sm-8">
                         <h5>{{ item.name }}</h5>
@@ -58,7 +58,7 @@
               
             </div>
 
-          <button *ngIf="selectedPackage.isCraftable" (click)="craftPackage(selectedPackage)" class="btn buy-btn">
+          <button *ngIf="selectedPackage.isCraftable" (click)="craftNewPackage(selectedPackage)" class="btn buy-btn">
             Craft
           </button>
           <p *ngIf="!selectedPackage.isCraftable" style="color: red">Not Enough Ingredients Available</p>

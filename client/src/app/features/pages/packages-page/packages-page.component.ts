@@ -47,14 +47,13 @@ export class PackagesPageComponent {
     });
   }
 
-  craftPackage(packages: Packages) {
-    if ((this.selectedPackage!.id = packages.id)) {
+  craftNewPackage(packages: Packages) {
+    if (this.selectedPackage!.id == packages.id) {
       this.packageService.craftPackage(packages).subscribe((data) => {
         this.selectedPackage!.amountCrafted++;
         console.log('Package Crafted', data);
       });
     }
-    this.ngOnInit();
   }
 
   getTotalPrice(items: any[]): number {
