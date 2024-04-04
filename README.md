@@ -1,9 +1,7 @@
-```markdown:README.md
-# NatureNook
 
-Welcome to NatureNook, the project dedicated to connecting people with nature and fostering an exploratory spirit. Our platform is designed to enable life-changing experiences for adventurous travelers, promoting both adventure and environmental conservation.
+![NatureNook_readme](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/b718e3d7-f2c0-440f-bd0b-9151101b1819)
+## NatureNook Overview
 
-## Overview
 
 NatureNook is a comprehensive platform that offers a wide selection of packages and carefully chosen items to meet the diverse needs and goals of our customers. Our aim is to ensure that every trip is not only remarkable but also precisely fits the individual goals and objectives of those who undertake it. Whether it's going on a challenging wilderness trek, exploring the mysteries of the rainforest, or just relaxing in the seclusion of a remote nature retreat, NatureNook is dedicated to offering unmatched opportunities for exploration, discovery, and personal growth amidst the breathtaking wonders of the natural world.
 
