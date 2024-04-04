@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RightSidePreviewBoxComponent } from '../../components/right-side-preview-box/right-side-preview-box.component';
 import { WarehouseService } from '../../../services/warehouse.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -12,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-custom-package',
   standalone: true,
-  imports: [RightSidePreviewBoxComponent, CommonModule, HttpClientModule, FormsModule],
+  imports: [CommonModule, HttpClientModule, FormsModule],
   templateUrl: './custom-package.component.html',
   styleUrl: './custom-package.component.css'
 })

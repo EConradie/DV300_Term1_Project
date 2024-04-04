@@ -17,7 +17,6 @@ export class AuthGuard implements CanActivate {
     if (this.authService.isLoggedIn()) {
       return true;
     } else {
-      // Redirect the user to the login page if they are not logged in
       return this.router.createUrlTree(['/login']);
     }
   }
