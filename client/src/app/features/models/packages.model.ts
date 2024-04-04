@@ -9,4 +9,5 @@ export interface Packages {
     description: string
     amountCrafted: number 
     isCraftable?: boolean;
+    inventoryId?: number;
   }

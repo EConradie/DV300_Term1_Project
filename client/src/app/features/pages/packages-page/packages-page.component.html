@@ -1,62 +1,85 @@
-<app-stock-quantity />
+<app-stock-quantity [packages]="packages" [selectedPackageId]="selectedPackageId" />
+
 
 <div class="container mt-3">
-    <div class="row mt-5">
-      <!-- Packages Display -->
-      <div class="col-lg-7">
-        <div class="row">
+  <div class="row mt-5">
+    <!-- Packages Display -->
+    <div class="col-lg-7">
+      <div class="row">
+        <div class="col-9">
+          <div class="col-md-3">
+            <h5 class="mt-1 title">Packages</h5>
+          </div>
+        </div>
 
-          <ng-container *ngFor="let pkg of packages">
+        <div class="col-3">
+          <select class="form-select dropdown-style" aria-label="Package options" [(ngModel)]="selectedInventoryId"
+            (ngModelChange)="FilterPackages()" selectedValue="1">
+            <option selected value="1">Johannesburg</option>
+            <option value="2">Cape Town</option>
+            <option value="3">Durban</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
 
-            <div class="col-lg-4 my-2">
-              <div (click)="setSelectedPackage(pkg)" class="card package-cards-styling btn hover-card">
-                <div class="image-container">
-                    <img *ngIf="pkg.image" [src]="pkg.image" class="card-img-top" [alt]="pkg.name || 'Image Description'">
-                    <div class="hover-text">{{pkg.description}} <br><b>R</b> {{ getTotalPrice(pkg.items ?? []) }}</div> <!-- Example text to show on hover -->
-                </div>
-                <div class="card-body">
-                  <h6 class="card-title">{{pkg.category}}</h6>
-                </div>
+
+
+
+        <ng-container *ngFor="let pkg of filteredPackages">
+
+          <div class="col-lg-4 my-2">
+            <div (click)="setSelectedPackage(pkg)" class="card package-cards-styling btn hover-card">
+              <div class="image-container">
+                <img *ngIf="pkg.image" [src]="pkg.image" class="card-img-top" [alt]="pkg.name || 'Image Description'">
+                <div class="hover-text">{{pkg.description}} <br><b>R</b> {{ getTotalPrice(pkg.items ?? []) }}</div>
+                <!-- Example text to show on hover -->
+              </div>
+              <div class="card-body">
+                <h6 class="card-title">{{pkg.category}}</h6>
+              </div>
+            </div>
+          </div>
+
+        </ng-container>
+
+      </div>
+    </div>
+
+    <!-- Selected Package Preview -->
+    <div class="col-lg-4" *ngIf="selectedPackage">
+      <div class="container preview-box">
+        <h4>Preview</h4>
+
+        <div class="card Package-card-styling"
+          style="background-image: url('{{selectedPackage.image}}'); background-size: cover; background-position: center; height: 200px;">
+        </div>
+        <div class="preview-info">
+          <div class="row">
+            <div class="col-9">
+              <h5>{{ selectedPackage.category }}</h5>
+            </div>
+            <div class="col-3">
+              <h5><b>R</b>{{ getTotalPrice(selectedPackage.items ?? []) }}</h5>
+            </div>
+          </div>
+          <hr>
+
+          <!-- Displaying items if any -->
+          <div *ngFor="let item of selectedPackage.items; let i = index">
+            <div class="row">
+              <div class="col-sm-1">
+                <h6><b>{{item.amountNeeded}}</b></h6>
+              </div>
+              <div class="col-sm-8">
+                <h6>{{ item.name }}</h6>
+              </div>
+              <div class="col-sm-3">
+                <h6><b>R</b>{{ item.price }}</h6>
               </div>
             </div>
 
-          </ng-container>
-
-        </div>
-      </div>
-      
-      <!-- Selected Package Preview -->
-      <div class="col-lg-4" *ngIf="selectedPackage">
-        <div class="container preview-box">
-          <h4>Preview</h4>
-          
-          <div class="card Package-card-styling" style="background-image: url('{{selectedPackage.image}}'); background-size: cover; background-position: center; height: 200px;"></div>
-          <div class="preview-info">
-            <div class="row">
-                <div class="col-9">
-                    <h5>{{ selectedPackage.category }}</h5>
-                </div>
-                <div class="col-3">
-                    <h5><b>R</b>{{ getTotalPrice(selectedPackage.items ?? []) }}</h5>
-                </div>
-            </div>
-            <hr>
-            
-            <!-- Displaying items if any -->
-            <div *ngFor="let item of selectedPackage.items; let i = index">
-                <div class="row">
-                    <div class="col-sm-1">
-                        <h6><b>{{item.amountNeeded}}</b></h6>
-                    </div>
-                    <div class="col-sm-8">
-                        <h6>{{ item.name }}</h6>
-                    </div>
-                    <div class="col-sm-3">
-                        <h6><b>R</b>{{ item.price }}</h6>
-                    </div>
-                </div>
-              
-            </div>
+          </div>
 
           <button *ngIf="selectedPackage.isCraftable" (click)="craftNewPackage(selectedPackage)" class="btn buy-btn">
             Craft

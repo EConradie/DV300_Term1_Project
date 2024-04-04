@@ -76,4 +76,14 @@ export class WarehouseComponent {
       (item) => item.name.toLowerCase().includes(this.searchQuery.toLowerCase())
     );
   }
+
+  getSelectedLocationName(): string {
+    const mapping: { [key: number]: string } = {
+      '0': 'All',
+      '1': 'Johannesburg',
+      '2': 'Cape Town',
+      '3': 'Durban'
+    };
+    return this.selectedInventoryId !== null ? mapping[this.selectedInventoryId] : 'All';
+  }
 }
