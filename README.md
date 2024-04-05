@@ -70,7 +70,15 @@ https://github.com/EConradie/DV300_Term1_Project_Server.git
 * Emilio concentrated more on the project's front end and made sure the website had the intended appearance. He embedded the data into the cards with Erik's help, and he helped him with the crafting functionality. He filled in the actual data and the purpose of    the website on each warehouse's dashboard page.
 * We collaborate on the project together over Discord for the majority of our working hours. This is a tiny sample of our calls on Discord:
 
-  ![Screenshot 2024-04-05 124232](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/8ed6f3d1-d511-4207-932c-fd9c87fd4a88)
+![Screenshot 2024-04-05 150839](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/0ed37f41-749a-45ac-ba99-b424f0f413f8)
+![Screenshot 2024-04-05 150754](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/4b533af7-cd76-46d7-b95d-1e18096ecbb2)
+![Screenshot 2024-04-05 150659](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/7f4c7ac6-a9dd-46bf-bbbf-9ca0d81b5033)
+![Screenshot 2024-04-05 150537](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/a1728dbf-2e72-4d13-9e6b-d90dc9ac3905)
+![Screenshot 2024-04-05 150356](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/60bdf5d1-a229-4365-aeed-9d9b1dbcae97)
+![Screenshot 2024-04-05 150246](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/2dd0ed97-6fea-4b04-8c1b-3571f98fde8e)
+![Screenshot 2024-04-05 150132](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/18c3a54c-e5a8-404c-9d15-c8ba6b438309)
+![Screenshot 2024-04-05 124232](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/9ecb3d75-d3f5-48a2-9138-bfb1a6758f81)
+
 
  
 ## Future Implementations
