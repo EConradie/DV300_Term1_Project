@@ -69,6 +69,7 @@ https://github.com/EConradie/DV300_Term1_Project_Server.git
 * The majority of the backend functionality was handled by Erik. He concentrated on setting up the server and the database. He put up the user function and the OTP. Additionally, he implemented the Database data in to the components.
 * Emilio concentrated more on the project's front end and made sure the website had the intended appearance. He embedded the data into the cards with Erik's help, and he helped him with the crafting functionality. He filled in the actual data and the purpose of    the website on each warehouse's dashboard page.
 * We collaborate on the project together over Discord for the majority of our working hours. This is a tiny sample of our calls on Discord:
+
   ![Screenshot 2024-04-05 124232](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/8ed6f3d1-d511-4207-932c-fd9c87fd4a88)
 
  
