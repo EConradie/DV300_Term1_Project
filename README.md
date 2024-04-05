@@ -59,9 +59,19 @@ https://github.com/EConradie/DV300_Term1_Project_Server.git
 * Integrate a Twilio function into your website to enable seamless communication via SMS, voice calls, or other channels.
 
 ### Challenges
-* 
-* 
+* The login process was one of the challenges. Twilio granted us access to one person, however the new user is unable to log in. Erik will receive the OTP message if we use his phone number, which is +27815738849. This is not the best way to test or mark the       website.
+* uploading the user's profile photo when they log in would be an additional functionality. Since it wasn't a short requirement, we decided it wasn't necessary and left it out.
+* Due to scheduling constraints, the custom package was either incomplete or not finished at all. We continued with the quick tweaks and posted a coming soon notice on the custom package card. In the interim, the navigation option to create a custom package has    been disabled.
+* It was a bit of a puzzle for desplaying the items in the crafting rection in packages page. and was unable to provide the goods. We modified a few entities and connections in the database for the solution, and it is now operational.
 
+## Participation and Role in the Project
+
+* The majority of the backend functionality was handled by Erik. He concentrated on setting up the server and the database. He put up the user function and the OTP. Additionally, he implemented the Database data in to the components.
+* Emilio concentrated more on the project's front end and made sure the website had the intended appearance. He embedded the data into the cards with Erik's help, and he helped him with the crafting functionality. He filled in the actual data and the purpose of    the website on each warehouse's dashboard page.
+* We collaborate on the project together over Discord for the majority of our working hours. This is a tiny sample of our calls on Discord:
+  ![Screenshot 2024-04-05 124232](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/8ed6f3d1-d511-4207-932c-fd9c87fd4a88)
+
+ 
 ## Future Implementations
 
 In the future, clients with specific requests will be able to create their own packages on the website by utilising the management website's functionality. 
