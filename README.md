@@ -12,7 +12,23 @@
 [![Twilio](https://img.shields.io/badge/Twilio-F22F46?style=for-the-badge&logo=twilio&logoColor=white)](https://www.twilio.com/)
 
 
-NatureNook is a comprehensive platform that offers a wide selection of packages and carefully chosen items to meet the diverse needs and goals of our customers. Our aim is to ensure that every trip is not only remarkable but also precisely fits the individual goals and objectives of those who undertake it. Whether it's going on a challenging wilderness trek, exploring the mysteries of the rainforest, or just relaxing in the seclusion of a remote nature retreat, NatureNook is dedicated to offering unmatched opportunities for exploration, discovery, and personal growth amidst the breathtaking wonders of the natural world.
+NatureNook was made to simplify and enhance the outdoor experience for camping and hiking enthusiasts. Recognizing that efficient gear management is crucial to the success and enjoyment of outdoor adventures, the project aimed to create a highly intuitive and user-friendly inventory management system. This system not only tracks and organizes gear but also provides tailored packages for users to include all family and friends.
+
+## Features
+
+- **User Authentication**: Secure user login and registration with OTP verification for enhanced security.
+- **Inventory Management**: Manage and track gear across multiple warehouse locations with real-time updates.
+- **Warehouse Dashboard**: Provides an overview of all warehouses, displaying detailed information about inventory levels.
+- **Inventory Updates**: Users can update the quantities of resources. The system ensures that quantities cannot drop below zero.
+- **Crafting System**: Users can craft new items using available inventory at specific warehouse locations based on predefined recipes.
+
+## Tech Stack
+
+- **Frontend**: Implemented using Angular for building a dynamic and responsive user interface.
+- **Backend**: Express server manages routing and server-side logic, interfacing with the database.
+- **Database**: PostgreSQL is used for storing and managing complex data relationships efficiently.
+- **Authentication**: OTP authentication implemented with Twilio, providing secure access and enhancing the user experience.
+
 
 ## Getting Started
 
@@ -70,17 +86,6 @@ https://github.com/EConradie/DV300_Term1_Project_Server.git
 * Emilio concentrated more on the project's front end and made sure the website had the intended appearance. He embedded the data into the cards with Erik's help, and he helped him with the crafting functionality. He filled in the actual data and the purpose of    the website on each warehouse's dashboard page.
 * We collaborate on the project together over Discord for the majority of our working hours. This is a tiny sample of our calls on Discord:
 
-![Screenshot 2024-04-05 150839](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/0ed37f41-749a-45ac-ba99-b424f0f413f8)
-![Screenshot 2024-04-05 150754](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/4b533af7-cd76-46d7-b95d-1e18096ecbb2)
-![Screenshot 2024-04-05 150659](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/7f4c7ac6-a9dd-46bf-bbbf-9ca0d81b5033)
-![Screenshot 2024-04-05 150537](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/a1728dbf-2e72-4d13-9e6b-d90dc9ac3905)
-![Screenshot 2024-04-05 150356](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/60bdf5d1-a229-4365-aeed-9d9b1dbcae97)
-![Screenshot 2024-04-05 150246](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/2dd0ed97-6fea-4b04-8c1b-3571f98fde8e)
-![Screenshot 2024-04-05 150132](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/18c3a54c-e5a8-404c-9d15-c8ba6b438309)
-![Screenshot 2024-04-05 124232](https://github.com/EConradie/DV300_Term1_Project/assets/113447065/9ecb3d75-d3f5-48a2-9138-bfb1a6758f81)
-
-
- 
 ## Future Implementations
 
 In the future, clients with specific requests will be able to create their own packages on the website by utilising the management website's functionality. 
