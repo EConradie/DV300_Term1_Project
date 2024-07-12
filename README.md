@@ -29,6 +29,9 @@ NatureNook was made to simplify and enhance the outdoor experience for camping a
 - **Database**: PostgreSQL is used for storing and managing complex data relationships efficiently.
 - **Authentication**: OTP authentication implemented with Twilio, providing secure access and enhancing the user experience.
 
+## Demonstration Video
+
+[https://drive.google.com/file/d/1HMyLIBtGYFiox-HhXtCEFA8Wc9nj3ML3/view?usp=drive_link](https://drive.google.com/file/d/1_v0C5zwtF2uHzu9K-jPH6zOl5jIfnbE7/view?usp=drive_link)
 
 ## Getting Started
 
